@@ -11,7 +11,7 @@ const defaultStyle = {
   borderRadius: 16,
   borderWidth: 1,
   borderColor: colors.gray[300],
-  fontFamily: fonts.medium600,
+  fontFamily: fonts.semibold600,
   fontSize: 14,
   textAlign: 'center'
 }

@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import AppLoading from 'expo-app-loading';
-import { Inter_500Medium, Inter_600SemiBold} from "@expo-google-fonts/inter";
+import { Inter_500Medium, Inter_600SemiBold, Inter_700Bold, Inter_400Regular} from "@expo-google-fonts/inter";
 import * as Font from 'expo-font';
 import BUTTONS from '~styles/buttons';
 import TYPOGRAPHY from '~styles/typography';
@@ -12,8 +12,10 @@ export default function App() {
 
   const _loadFontsAsync = async() => {
     await Font.loadAsync({
+      'Inter400': Inter_400Regular,
       'Inter500': Inter_500Medium,
       'Inter600': Inter_600SemiBold,
+      'Inter700': Inter_700Bold,
     });
     setFontsLoaded(true);
   };
@@ -28,8 +30,9 @@ export default function App() {
     );
   } else {
     return (
-      <View style={styles.container}>
+      <SafeAreaView>
         <StatusBar style="auto" />
+
         <Pressable>
           <Text style={[BUTTONS.default]}>Button Example</Text>
         </Pressable>
@@ -39,15 +42,11 @@ export default function App() {
         <Pressable>
           <Text style={[BUTTONS.light]}>Button Example</Text>
         </Pressable>
+
+        <Text style={[TYPOGRAPHY.heading]}>Heading</Text>
+        <Text style={[TYPOGRAPHY.subheading]}>Subheading</Text>
+        <Text style={[TYPOGRAPHY.body]}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias sint consectetur esse aut magnam iste earum id excepturi. Qui sequi labore, nisi rerum dolores explicabo.</Text>
+      </SafeAreaView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
