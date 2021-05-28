@@ -4,14 +4,16 @@ import fonts from "./fonts";
 
 const defaultStyle = {
   overflow: 'hidden',
+  alignSelf: 'flex-start',
   paddingHorizontal: 34,
   paddingVertical: 19,
   backgroundColor: colors.gray[300],
   borderRadius: 16,
   borderWidth: 1,
   borderColor: colors.gray[300],
-  fontFamily: fonts[600],
+  fontFamily: fonts.medium600,
   fontSize: 14,
+  textAlign: 'center'
 }
 
 const BUTTONS = StyleSheet.create({
