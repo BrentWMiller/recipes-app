@@ -12,8 +12,8 @@ const TYPOGRAPHY = StyleSheet.create({
     fontSize: 32
   },
   subheading: {
-    fontFamily: fonts.semibold600,
-    fontSize: 20
+    fontFamily: fonts.medium500,
+    fontSize: 24
   }
 });
 
