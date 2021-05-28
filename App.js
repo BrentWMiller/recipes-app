@@ -4,7 +4,7 @@ import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { Inter_500Medium, Inter_600SemiBold} from "@expo-google-fonts/inter";
 import * as Font from 'expo-font';
-import buttonStyles from './styles/buttons';
+import buttonStyles from '~styles/buttons';
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
