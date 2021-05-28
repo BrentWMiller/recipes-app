@@ -14,7 +14,7 @@ const defaultStyle = {
   fontSize: 14,
 }
 
-const buttonStyles = StyleSheet.create({
+const BUTTONS = StyleSheet.create({
   default: {
     ...defaultStyle
   },
@@ -32,4 +32,4 @@ const buttonStyles = StyleSheet.create({
   }
 });
 
-export default buttonStyles;
+export default BUTTONS;

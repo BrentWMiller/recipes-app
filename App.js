@@ -4,7 +4,8 @@ import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { Inter_500Medium, Inter_600SemiBold} from "@expo-google-fonts/inter";
 import * as Font from 'expo-font';
-import buttonStyles from '~styles/buttons';
+import BUTTONS from '~styles/buttons';
+import TYPOGRAPHY from '~styles/typography';
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -29,10 +30,15 @@ export default function App() {
     return (
       <View style={styles.container}>
         <StatusBar style="auto" />
-        <Text style={{...buttonStyles.default}}>Button Example</Text>
-        <Text style={{...buttonStyles.dark}}>Button Example</Text>
-        <Text style={{...buttonStyles.light}}>Button Example</Text>
-      </View>
+        <Pressable>
+          <Text style={[BUTTONS.default]}>Button Example</Text>
+        </Pressable>
+        <Pressable>
+          <Text style={[BUTTONS.dark]}>Button Example</Text>
+        </Pressable>
+        <Pressable>
+          <Text style={[BUTTONS.light]}>Button Example</Text>
+        </Pressable>
     );
   }
 }
