@@ -4,7 +4,8 @@ import { getTimebasedGreeting } from '~helpers/greetings';
 import TYPOGRAPHY from '~styles/typography';
 
 function Greeting(props) {
-  const greeting = getTimebasedGreeting();
+  let { greeting } = props;
+  greeting = greeting ? greeting : getTimebasedGreeting();
 
   return (
     <View>
