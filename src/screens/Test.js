@@ -1,21 +1,15 @@
 import React from "react";
-import { SafeAreaView, Text, Pressable } from "react-native";
-import BUTTONS from "~styles/buttons";
+import { SafeAreaView, Text } from "react-native";
+import { useState } from "react/cjs/react.development";
+import AppButton from "~components/AppButton";
 import TYPOGRAPHY from "~styles/typography";
 
 const TestScreen = () => {
-
   return (
     <SafeAreaView>
-      <Pressable>
-        <Text style={[BUTTONS.default]}>Button Example</Text>
-      </Pressable>
-      <Pressable>
-        <Text style={[BUTTONS.dark]}>Button Example</Text>
-      </Pressable>
-      <Pressable>
-        <Text style={[BUTTONS.light]}>Button Example</Text>
-      </Pressable>
+      <AppButton title="Button Example" />
+      <AppButton title="Button Example" type="dark"/>
+      <AppButton title="Button Example" type="light" />
 
       <Text style={[TYPOGRAPHY.heading]}>Heading</Text>
       <Text style={[TYPOGRAPHY.subheading]}>Subheading</Text>
