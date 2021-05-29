@@ -41,7 +41,7 @@ function CategoryBlock(props) {
         />
 
         <View style={styles.description}>
-          <Text style={[{color: COLORS.white, fontSize: 22, fontFamily: FONTS.semibold600, marginBottom: 16}]}>{ category.title }</Text>
+          <Text style={[{color: COLORS.white, fontSize: 22, fontFamily: FONTS.bold700, marginBottom: 16}]}>{ category.title }</Text>
           <Text style={[{color: COLORS.gray[300], fontSize: 16}]}>{ category.recipesCount } Recipes</Text>
         </View>
       </View>
