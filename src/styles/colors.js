@@ -6,7 +6,8 @@ const COLORS = {
     700: '#808191'
   },
   white: '#fff',
-  black: '#000'
+  black: '#000',
+  seawave: '#0029FF'
 }
 
 export default COLORS;
