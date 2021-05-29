@@ -1,17 +1,17 @@
 import { StyleSheet } from "react-native";
-import fonts from "./fonts";
+import FONTS from "./fonts";
 
 const TYPOGRAPHY = StyleSheet.create({
   body: {
-    fontFamily: fonts.normal400,
+    fontFamily: FONTS.normal400,
     fontSize: 16
   },
   heading: {
-    fontFamily: fonts.bold700,
+    fontFamily: FONTS.bold700,
     fontSize: 32
   },
   subheading: {
-    fontFamily: fonts.semibold600,
+    fontFamily: FONTS.semibold600,
     fontSize: 20
   }
 });

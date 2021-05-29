@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 import COLORS from "./colors";
-import fonts from "./fonts";
+import FONTS from "./fonts";
 
 const defaultStyle = {
   alignSelf: 'flex-start',
-  fontFamily: fonts.medium500,
+  fontFamily: FONTS.medium500,
   fontSize: 16,
   color: COLORS.seawave
 }

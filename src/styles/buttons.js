@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import COLORS from "./colors";
-import fonts from "./fonts";
+import FONTS from "./fonts";
 
 const defaultStyle = {
   overflow: 'hidden',
@@ -11,7 +11,7 @@ const defaultStyle = {
   borderRadius: 16,
   borderWidth: 1,
   borderColor: COLORS.gray[300],
-  fontFamily: fonts.semibold600,
+  fontFamily: FONTS.semibold600,
   fontSize: 14,
   textAlign: 'center'
 }
