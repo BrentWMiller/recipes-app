@@ -5,6 +5,7 @@ import APP from "~styles/app";
 import CategoryBlocks from "~components/CategoryBlocks";
 import RecipeBlocks from "~components/RecipeBlocks";
 import Greeting from "~components/Greeting";
+import UserAvatar from "~components/UserAvatar";
 
 const HomeScreen = ({navigation}) => {
   const TEST_CATEGORIES = [
@@ -40,14 +41,19 @@ const HomeScreen = ({navigation}) => {
     }
   ];
 
+  const user = {
+    name: 'Stephanie'
+  }
+
   return (
     <SafeAreaView>
 
-      <View style={[APP.container, {paddingTop: 20}]}>
-        <Greeting name="Brent Miller" />
+      <View style={[APP.container, {flexDirection: 'row', justifyContent: 'space-between', paddingTop: 20}]}>
+        <Greeting name={user.name} />
+        <UserAvatar initials={user.name} onPress={() => console.log('User profile')} />
       </View>
 
-      <View style={[APP.container, {flexDirection: 'row', marginTop: 24}]}>
+      <View style={[APP.container, {flexDirection: 'row', marginTop: 40}]}>
         <RecipeSearchInput />
       </View>
 
