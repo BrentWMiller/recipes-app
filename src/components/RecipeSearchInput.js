@@ -1,6 +1,7 @@
 import React from "react";
 import { TextInput, View, StyleSheet, Text } from "react-native";
 import COLORS from "~styles/colors";
+import FONTS from "~styles/fonts";
 import SearchIcon from "~svgs/search.svg";
 
 const RecipeSearchInput = (props) => {
@@ -36,7 +37,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.gray[300],
     paddingLeft: 22 + (15 * 2),
     paddingRight: 15,
-    borderRadius: 15
+    borderRadius: 15,
+    fontFamily: FONTS.medium500
   },
 })
 
