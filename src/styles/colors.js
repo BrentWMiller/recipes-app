@@ -7,7 +7,10 @@ const COLORS = {
   },
   white: '#fff',
   black: '#000',
-  seawave: '#0029FF'
+
+  primary: {
+    500: '#0029FF'
+  }
 }
 
 export default COLORS;

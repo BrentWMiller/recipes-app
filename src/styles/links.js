@@ -6,7 +6,7 @@ const defaultStyle = {
   alignSelf: 'flex-start',
   fontFamily: FONTS.medium500,
   fontSize: 16,
-  color: COLORS.seawave
+  color: COLORS.primary[500]
 }
 
 const LINKS = StyleSheet.create({
