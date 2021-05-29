@@ -42,7 +42,6 @@ const HomeScreen = ({navigation}) => {
     }
   ];
 
-
   return (
     <SafeAreaView>
 
@@ -52,9 +51,6 @@ const HomeScreen = ({navigation}) => {
 
       <View style={[APP.container, {flexDirection: 'row', marginTop: 24}]}>
         <RecipeSearchInput />
-        <View style={{ marginLeft: 16}}>
-          <RecipeSearchFilterToggle />
-        </View>
       </View>
 
       <View style={{marginTop: 40}}>
