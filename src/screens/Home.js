@@ -8,7 +8,11 @@ import Greeting from "~components/Greeting";
 import UserAvatar from "~components/UserAvatar";
 
 const HomeScreen = ({navigation}) => {
-  const TEST_CATEGORIES = [
+  const user = {
+    name: 'Stephanie'
+  }
+
+  const categories = [
     {
       id: '1',
       title: 'Delicious Breakfast Favorites',
@@ -41,10 +45,6 @@ const HomeScreen = ({navigation}) => {
     }
   ];
 
-  const user = {
-    name: 'Stephanie'
-  }
-
   return (
     <SafeAreaView>
 
@@ -58,7 +58,7 @@ const HomeScreen = ({navigation}) => {
       </View>
 
       <View style={{marginTop: 40}}>
-        <CategoryBlocks categories={ TEST_CATEGORIES } />
+        <CategoryBlocks categories={ categories } />
       </View>
 
       <View style={{marginTop: 40}}>
