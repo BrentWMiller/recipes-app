@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import APP from "~styles/app";
 import TYPOGRAPHY from "~styles/typography";
 import AppLink from "./AppLink";
@@ -15,15 +15,21 @@ const CategoryBlocks = (props) => {
         <AppLink title="View all" />
       </View>
 
-      {
-        categories.length > 0
-          ? <View>
-              {categories.map((category) => (
-                <CategoryBlock key={category.id} category={ category } />
-              ))}
-            </View>
-          : <Text>No categories created yet.</Text>
-      }
+      <View style={{ marginTop: 20 }}>
+        {
+          categories.length > 0
+            ? <ScrollView
+                horizontal={true}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+              >
+                {categories.map((category, index) => (
+                  <CategoryBlock key={category.id} category={ category } first={index === 0} last={index === categories.length - 1} />
+                ))}
+              </ScrollView>
+            : <Text>No categories created yet.</Text>
+        }
+      </View>
     </View>
   )
 }
