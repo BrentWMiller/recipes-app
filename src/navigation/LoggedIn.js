@@ -13,6 +13,9 @@ const LoggedIn = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
+          options={{
+            headerShown: false
+          }}
         />
         <Stack.Screen name="Test" component={TestScreen} />
       </Stack.Navigator>
