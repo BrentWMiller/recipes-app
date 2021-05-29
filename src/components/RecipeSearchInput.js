@@ -11,7 +11,7 @@ const RecipeSearchInput = (props) => {
       <View style={styles.wrapper}>
         <TextInput
           style={styles.input}
-          placeholder="Search"
+          placeholder="Search for recipes"
         />
         <SearchIcon color={COLORS.black} style={styles.icon} width="22" height="21"/>
       </View>
