@@ -6,6 +6,7 @@ import APP from "~styles/app";
 import TYPOGRAPHY from "~styles/typography";
 import CategoryBlocks from "~components/CategoryBlocks";
 import RecipeBlocks from "~components/RecipeBlocks";
+import Greeting from "~components/Greeting";
 
 const HomeScreen = ({navigation}) => {
   const TEST_CATEGORIES = [
@@ -44,8 +45,9 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <SafeAreaView>
+
       <View style={[APP.container, {paddingTop: 20}]}>
-        <Text style={[TYPOGRAPHY.heading]}>Recipes</Text>
+        <Greeting />
       </View>
 
       <View style={[APP.container, {flexDirection: 'row', marginTop: 24}]}>
