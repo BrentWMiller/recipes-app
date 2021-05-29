@@ -45,6 +45,39 @@ const HomeScreen = ({navigation}) => {
     }
   ];
 
+  const recipes = [
+    {
+      id: '1',
+      name: 'Chicken Paprikash',
+      time: 30,
+      ingredients: 11
+    },
+    {
+      id: '2',
+      name: 'Mom\'s Homemade Speghetti w/ Meatballs',
+      time: 60,
+      ingredients: 6
+    },
+    {
+      id: '3',
+      name: 'Birthday cake',
+      time: 130,
+      ingredients: 8
+    },
+    {
+      id: '4',
+      name: 'Chicken Alfredo',
+      time: 50,
+      ingredients: 13
+    },
+    {
+      id: '5',
+      name: 'Homemade Pizza',
+      time: 45,
+      ingredients: 10
+    },
+  ];
+
   return (
     <SafeAreaView>
 
@@ -62,7 +95,7 @@ const HomeScreen = ({navigation}) => {
       </View>
 
       <View style={{marginTop: 40}}>
-        <RecipeBlocks />
+        <RecipeBlocks recipes={recipes}/>
       </View>
     </SafeAreaView>
   );
