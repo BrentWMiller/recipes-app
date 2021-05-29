@@ -11,27 +11,27 @@ const HomeScreen = ({navigation}) => {
   const TEST_CATEGORIES = [
     {
       id: '1',
-      title: 'Breakfast',
+      title: 'Delicious Breakfast Favorites',
       recipesCount: 4
     },
     {
       id: '2',
-      title: 'Lunch',
+      title: 'Lunch and Brunch',
       recipesCount: 14
     },
     {
       id: '3',
-      title: 'Dinner',
+      title: 'Dinner for Winners',
       recipesCount: 26
     },
     {
       id: '4',
-      title: 'Desert',
+      title: 'Delicious Deserts',
       recipesCount: 15
     },
     {
       id: '5',
-      title: 'Cocktails',
+      title: 'Killer Cocktails',
       recipesCount: 10
     }
   ];
