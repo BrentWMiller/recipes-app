@@ -9,7 +9,12 @@ const Stack = createStackNavigator();
 const LoggedIn = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          cardStyle: { backgroundColor: '#fff' }
+        }}
+      >
         <Stack.Screen
           name="Home"
           component={HomeScreen}
