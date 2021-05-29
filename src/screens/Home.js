@@ -47,7 +47,7 @@ const HomeScreen = ({navigation}) => {
     <SafeAreaView>
 
       <View style={[APP.container, {paddingTop: 20}]}>
-        <Greeting />
+        <Greeting name="Brent Miller" />
       </View>
 
       <View style={[APP.container, {flexDirection: 'row', marginTop: 24}]}>
