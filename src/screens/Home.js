@@ -8,6 +8,35 @@ import CategoryBlocks from "~components/CategoryBlocks";
 import RecipeBlocks from "~components/RecipeBlocks";
 
 const HomeScreen = ({navigation}) => {
+  const TEST_CATEGORIES = [
+    {
+      id: '1',
+      title: 'Breakfast',
+      recipesCount: 4
+    },
+    {
+      id: '2',
+      title: 'Lunch',
+      recipesCount: 14
+    },
+    {
+      id: '3',
+      title: 'Dinner',
+      recipesCount: 26
+    },
+    {
+      id: '4',
+      title: 'Desert',
+      recipesCount: 15
+    },
+    {
+      id: '5',
+      title: 'Cocktails',
+      recipesCount: 10
+    }
+  ];
+
+
   return (
     <SafeAreaView>
       <View style={[APP.container, {paddingTop: 20}]}>
@@ -22,7 +51,7 @@ const HomeScreen = ({navigation}) => {
       </View>
 
       <View style={{marginTop: 40}}>
-        <CategoryBlocks />
+        <CategoryBlocks categories={ TEST_CATEGORIES } />
       </View>
 
       <View style={{marginTop: 40}}>
