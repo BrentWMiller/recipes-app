@@ -1,9 +1,7 @@
 import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import RecipeSearchInput from "~components/RecipeSearchInput";
-import RecipeSearchFilterToggle from "~components/RecipeSearchFilterToggle";
 import APP from "~styles/app";
-import TYPOGRAPHY from "~styles/typography";
 import CategoryBlocks from "~components/CategoryBlocks";
 import RecipeBlocks from "~components/RecipeBlocks";
 import Greeting from "~components/Greeting";
