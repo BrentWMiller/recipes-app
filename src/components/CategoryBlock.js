@@ -37,7 +37,7 @@ function CategoryBlock(props) {
       <View style={styles.wrapper}>
         <Image
           style={styles.image}
-          source={require('../../assets/test/recipe.jpg')}
+          source={category.image}
         />
 
         <View style={styles.description}>
