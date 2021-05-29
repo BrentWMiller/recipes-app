@@ -5,6 +5,7 @@ import RecipeSearchFilterToggle from "~components/RecipeSearchFilterToggle";
 import APP from "~styles/app";
 import TYPOGRAPHY from "~styles/typography";
 import CategoryBlocks from "~components/CategoryBlocks";
+import RecipeBlocks from "~components/RecipeBlocks";
 
 const HomeScreen = ({navigation}) => {
   return (
@@ -20,8 +21,12 @@ const HomeScreen = ({navigation}) => {
         </View>
       </View>
 
-      <View style={[APP.container, {marginTop: 40}]}>
+      <View style={{marginTop: 40}}>
         <CategoryBlocks />
+      </View>
+
+      <View style={{marginTop: 40}}>
+        <RecipeBlocks />
       </View>
     </SafeAreaView>
   );
