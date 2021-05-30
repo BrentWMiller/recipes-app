@@ -10,15 +10,15 @@ function TimeFormatted(props) {
   let timeString = '';
 
   if (hours > 0) {
-    timeString += `${hours} hour${hours > 1 ? 's' : ''}`;
+    timeString += `${hours} hr${hours > 1 ? 's' : ''}`;
   }
 
   if (hours > 0 && minutes > 0) {
-    timeString += ' and '
+    timeString += ' '
   }
 
   if (minutes > 0) {
-    timeString += `${minutes} minute${minutes > 1 ? 's' : ''}`;
+    timeString += `${minutes} min${minutes > 1 ? 's' : ''}`;
   }
   
   return (
