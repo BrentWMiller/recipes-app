@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import COLORS from '~styles/colors';
 import FONTS from '~styles/fonts';
 
-function Placeholder(props) {
-  let { title, count, size, bgColor, textColor, style } = props;
+function ImagePlaceholder(props) {
+  let { title, image, count, size, bgColor, textColor, style } = props;
 
   // Set defaults
   count = count ? count : 2;
@@ -14,6 +14,7 @@ function Placeholder(props) {
 
   const styles = StyleSheet.create({
     wrapper: {
+      overflow: 'hidden',
       justifyContent: 'center',
       alignItems: 'center',
       width: size,
@@ -27,15 +28,23 @@ function Placeholder(props) {
       textTransform: 'uppercase',
       textAlign: 'center',
       color: textColor
+    },
+    image: {
+      width: size,
+      height: size
     }
   });
 
 
   return (
     <View style={[style, styles.wrapper]}>
-      <Text style={styles.title}>{ title.substring(0, count) }</Text>
+      {
+        image
+        ? <Image style={styles.image} source={image} />
+        : <Text style={styles.title}>{ title.substring(0, count) }</Text>
+      }
     </View>
   );
 }
 
-export default Placeholder;
+export default ImagePlaceholder;

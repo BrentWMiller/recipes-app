@@ -1,13 +1,13 @@
 import React from 'react';
 import { Pressable } from 'react-native';
-import Placeholder from './Placeholder';
+import ImagePlaceholder from './ImagePlaceholder';
 
 function UserAvatar(props) {
   const { onPress, initials } = props;
 
   return (
     <Pressable onPress={onPress}>
-      <Placeholder title={ initials } />
+      <ImagePlaceholder title={ initials } />
     </Pressable>
   );
 }
