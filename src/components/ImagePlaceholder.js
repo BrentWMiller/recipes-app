@@ -4,13 +4,13 @@ import COLORS from '~styles/colors';
 import FONTS from '~styles/fonts';
 
 function ImagePlaceholder(props) {
-  let { title, image, count, size, bgColor, textColor, style } = props;
+  let { title, image, count, size, bgStyle, textStyle, style } = props;
 
   // Set defaults
   count = count ? count : 2;
   size = size ? size : 50;
-  bgColor = bgColor ? bgColor : COLORS.black;
-  textColor = textColor ? textColor : COLORS.white;
+  bgStyle = bgStyle ? [bgStyle] : {backgroundColor: COLORS.black};
+  textStyle = textStyle ? [textStyle] : {color: COLORS.white};
 
   const styles = StyleSheet.create({
     wrapper: {
@@ -19,7 +19,6 @@ function ImagePlaceholder(props) {
       alignItems: 'center',
       width: size,
       height: size,
-      backgroundColor: bgColor,
       borderRadius: 15,
     },
     title: {
@@ -27,7 +26,6 @@ function ImagePlaceholder(props) {
       fontFamily: FONTS.medium500,
       textTransform: 'uppercase',
       textAlign: 'center',
-      color: textColor
     },
     image: {
       width: size,
@@ -38,11 +36,11 @@ function ImagePlaceholder(props) {
   title = count === 'emoji' ? title : title.substring(0, count);
 
   return (
-    <View style={[style, styles.wrapper]}>
+    <View style={[style, styles.wrapper, bgStyle]}>
       {
         image
         ? <Image style={styles.image} source={image} />
-        : <Text style={styles.title}>{ title }</Text>
+        : <Text style={[styles.title, textStyle]}>{ title }</Text>
       }
     </View>
   );

@@ -30,7 +30,8 @@ function RecipeBlock(props) {
       <ImagePlaceholder
         title={ nameToEmoji }
         count="emoji"
-        bgColor={ COLORS.gray[100] }
+        bgStyle={{ backgroundColor: COLORS.gray[100] }}
+        textStyle={{ fontSize: 40 }}
         size={ 75 }
         image={ recipe.image }
         style={{ marginRight: 16 }}
