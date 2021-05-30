@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { convertToEmojis } from '~helpers/emojis';
 import COLORS from '~styles/colors';
 import TYPOGRAPHY from '~styles/typography';
 import ImagePlaceholder from './ImagePlaceholder';
@@ -22,9 +23,18 @@ function RecipeBlock(props) {
     }
   });
 
+  const nameToEmoji = convertToEmojis(recipe.name);
+
   return (
     <View style={styles.wrapper}>
-      <ImagePlaceholder title={ recipe.name } size={ 75 } image={ recipe.image } style={{ marginRight: 16 }}/>
+      <ImagePlaceholder
+        title={ nameToEmoji }
+        count="emoji"
+        bgColor={ COLORS.gray[100] }
+        size={ 75 }
+        image={ recipe.image }
+        style={{ marginRight: 16 }}
+      />
 
       <View style={{ flexShrink: 1, width: '100%'}}>
         <Text
