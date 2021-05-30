@@ -71,6 +71,12 @@ const HomeScreen = ({navigation}) => {
       ingredients: 8
     },
     {
+      id: '7',
+      name: 'Pancakes',
+      time: 20,
+      ingredients: 4
+    },
+    {
       id: '4',
       name: 'Chicken Alfredo',
       time: 50,
