@@ -435,4 +435,8 @@ const foodEmojis = [
     keywords: ['egg'],
     emoji: '🥚'
   },
+  {
+    keywords: ['coffee'],
+    emoji: '☕'
+  },
 ]
