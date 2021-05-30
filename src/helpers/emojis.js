@@ -439,4 +439,23 @@ const foodEmojis = [
     keywords: ['coffee'],
     emoji: '☕'
   },
-]
+];
+
+const convertToEmojis = (string, amountToReturn = 1) => {
+  const words = string.toLowerCase().trim().split(' ');
+  let emojis = [];
+
+  foodEmojis.forEach((emoji) => {
+    const result = words.filter(word => 
+      emoji.keywords.some(re => re.includes(word))
+    );
+
+    if (result.length > 0) {
+      emojis.push(emoji.emoji);
+    } 
+  });
+
+  return emojis.slice(0, amountToReturn);
+}
+
+export { convertToEmojis };
