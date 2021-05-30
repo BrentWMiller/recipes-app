@@ -3,6 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '~screens/Home';
 import TestScreen from '~screens/Test';
+import ProfileScreen from "~screens/Profile";
+import CategoriesScreen from "~screens/Categories";
+import RecipesScreen from "~screens/Recipes";
 
 const Stack = createStackNavigator();
 
@@ -22,7 +25,9 @@ const LoggedIn = () => {
             headerShown: false
           }}
         />
-        <Stack.Screen name="Test" component={TestScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Categories" component={CategoriesScreen} />
+        <Stack.Screen name="Recipes" component={RecipesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

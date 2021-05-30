@@ -9,7 +9,7 @@ import UserAvatar from "~components/UserAvatar";
 
 const HomeScreen = ({navigation}) => {
   const user = {
-    name: 'Stephanie'
+    name: 'Brent Miller'
   }
 
   const categories = [
@@ -89,7 +89,7 @@ const HomeScreen = ({navigation}) => {
       <ScrollView>
         <View style={[APP.container, {flexDirection: 'row', justifyContent: 'space-between', paddingTop: 20}]}>
           <Greeting name={user.name} />
-          <UserAvatar initials={user.name} onPress={() => console.log('User profile')} />
+          <UserAvatar initials={user.name} onPress={() => navigation.navigate('Profile')} />
         </View>
 
         <View style={[APP.container, {flexDirection: 'row', marginTop: 40}]}>
@@ -97,11 +97,11 @@ const HomeScreen = ({navigation}) => {
         </View>
 
         <View style={{marginTop: 40}}>
-          <CategoryBlocks categories={ categories } />
+          <CategoryBlocks categories={ categories } navigation={ navigation } />
         </View>
 
         <View style={{marginTop: 40}}>
-          <RecipeBlocks recipes={recipes}/>
+          <RecipeBlocks recipes={recipes} navigation={ navigation } />
         </View>
       </ScrollView>
     </SafeAreaView>

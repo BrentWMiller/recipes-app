@@ -6,13 +6,13 @@ import AppLink from "./AppLink";
 import CategoryBlock from "./CategoryBlock";
 
 const CategoryBlocks = (props) => {
-  const { categories } = props;
+  const { categories, navigation } = props;
 
   return (
     <View>
       <View style={[APP.container, {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}]}>
         <Text style={[TYPOGRAPHY.subheading]}>Categories</Text>
-        <AppLink title="View all" />
+        <AppLink title="View all" onPress={() => navigation.navigate('Categories')} />
       </View>
 
       <View style={{ marginTop: 20 }}>

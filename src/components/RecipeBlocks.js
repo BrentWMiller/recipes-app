@@ -6,13 +6,13 @@ import AppLink from "./AppLink";
 import RecipeBlock from "./RecipeBlock";
 
 const RecipeBlocks = (props) => {
-  const { recipes } = props;
+  const { recipes, navigation } = props;
 
   return (
     <View>
       <View style={[APP.container, {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}]}>
         <Text style={[TYPOGRAPHY.subheading]}>Recipes</Text>
-        <AppLink title="View all" />
+        <AppLink title="View all" onPress={() => navigation.navigate('Recipes')} />
       </View>
 
       <View style={[[APP.containerWider], { marginTop: 20 }]}>
