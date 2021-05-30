@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
-import { BlurView } from 'expo-blur';
+import { LinearGradient } from 'expo-linear-gradient';
 import COLORS from '~styles/colors';
 import FONTS from '~styles/fonts';
 
@@ -29,6 +29,7 @@ function CategoryBlock(props) {
       left: 0,
       width: '100%',
       padding: 32,
+      // backgroundColor: COLORS.black
     }
   })
   
@@ -40,10 +41,13 @@ function CategoryBlock(props) {
           source={category.image}
         />
 
-        <View style={styles.description}>
+        <LinearGradient
+          colors={['transparent', 'rgba(0,0,0,0.55)']}
+          style={styles.description}
+        >
           <Text style={[{color: COLORS.white, fontSize: 22, fontFamily: FONTS.bold700, marginBottom: 16}]}>{ category.title }</Text>
-          <Text style={[{color: COLORS.gray[300], fontSize: 16}]}>{ category.recipesCount } Recipes</Text>
-        </View>
+          <Text style={[{color: COLORS.gray[200], fontSize: 16}]}>{ category.recipesCount } Recipes</Text>
+        </LinearGradient>
       </View>
     </View>
   );
