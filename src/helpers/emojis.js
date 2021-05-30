@@ -1,461 +1,499 @@
 const foodEmojis = [
   {
-    keywords: ['burger', 'hamburger'],
+    keyword: 'burger hamburger',
     emoji: '🍔'
   },
   {
-    keywords: ['pizza'],
+    keyword: 'pizza',
     emoji: '🍕'
   },
   {
-    keywords: ['meat', 'beef'],
+    keyword: 'meat beef',
     emoji: '🍖'
   },
   {
-    keywords: ['lamb'],
+    keyword: 'lamb',
     emoji: '🥩'
   },
   {
-    keywords: ['chicken', 'poultry'],
+    keyword: 'chicken poultry',
     emoji: '🍗'
   },
   {
-    keywords: ['hotdog', 'hot dog'],
+    keyword: 'hotdog hot dog',
     emoji: '🌭'
   },
   {
-    keywords: ['salt'],
+    keyword: 'salt',
     emoji: '🧂'
   },
   {
-    keywords: ['egg', 'fried egg'],
+    keyword: 'egg fried egg',
     emoji: '🍳'
   },
   {
-    keywords: ['waffle'],
+    keyword: 'waffle',
     emoji: '🧇'
   },
   {
-    keywords: ['pancake'],
+    keyword: 'pancake',
     emoji: '🥞'
   },
   {
-    keywords: ['butter', 'margarine'],
+    keyword: 'butter margarine',
     emoji: '🧈'
   },
   {
-    keywords: ['pretzel'],
+    keyword: 'pretzel',
     emoji: '🥨'
   },
   {
-    keywords: ['bagel'],
+    keyword: 'bagel',
     emoji: '🥯'
   },
   {
-    keywords: ['cheese'],
+    keyword: 'cheese',
     emoji: '🧀'
   },
   {
-    keywords: ['sandwich'],
+    keyword: 'sandwich',
     emoji: '🥪'
   },
   {
-    keywords: ['taco'],
+    keyword: 'taco',
     emoji: '🌮'
   },
   {
-    keywords: ['burrito'],
+    keyword: 'burrito',
     emoji: '🌯'
   },
   {
-    keywords: ['canned'],
+    keyword: 'canned',
     emoji: '🥫'
   },
   {
-    keywords: ['dumpling'],
+    keyword: 'dumpling',
     emoji: '🥟'
   },
   {
-    keywords: ['cookie', 'fortune'],
+    keyword: 'cookie fortune',
     emoji: '🥠'
   },
   {
-    keywords: ['oyster'],
+    keyword: 'oyster',
     emoji: '🦪'
   },
   {
-    keywords: ['cake', 'moon'],
+    keyword: 'cake moon',
     emoji: '🥮'
   },
   {
-    keywords: ['oden'],
+    keyword: 'oden',
     emoji: '🍢'
   },
   {
-    keywords: ['soup'],
+    keyword: 'soup',
     emoji: '🥣'
   },
   {
-    keywords: ['cupcake'],
+    keyword: 'cupcake',
     emoji: '🧁'
   },
   {
-    keywords: ['honey'],
+    keyword: 'honey',
     emoji: '🍯'
   },
   {
-    keywords: ['milk'],
+    keyword: 'milk',
     emoji: '🥛'
   },
   {
-    keywords: ['tea'],
+    keyword: 'tea',
     emoji: '🍵'
   },
   {
-    keywords: ['mate'],
+    keyword: 'mate',
     emoji: '🧉'
   },
   {
-    keywords: ['sake'],
+    keyword: 'sake',
     emoji: '🍶'
   },
   {
-    keywords: ['campagne'],
+    keyword: 'campagne',
     emoji: '🍾'
   },
   {
-    keywords: ['wine', 'cabernet', 'merlot', 'zinfandel', 'syrah', 'shiraz', 'malbec', 'pinot noir', 'sangiovese', 'nebbiolo'],
+    keyword: 'wine cabernet merlot zinfandel syrah shiraz malbec pinot noir sangiovese nebbiolo',
     emoji: '🍷'
   },
   {
-    keywords: ['cocktail', 'drink', 'martini'],
+    keyword: 'cocktail drink martini',
     emoji: '🍸'
   },
   {
-    keywords: ['cocktail', 'drink', 'tropical'],
+    keyword: 'cocktail drink tropical',
     emoji: '🍹'
   },
   {
-    keywords: ['beer'],
+    keyword: 'beer',
     emoji: '🍺'
   },
   {
-    keywords: ['beer', 'beers'],
+    keyword: 'beer beers',
     emoji: '🍻'
   },
   {
-    keywords: ['cocktail', 'drink'],
+    keyword: 'cocktail drink',
     emoji: '🥃'
   },
   {
-    keywords: ['ice'],
+    keyword: 'ice',
     emoji: '🧊'
   },
   {
-    keywords: ['beer', 'cocktail', 'drink'],
+    keyword: 'beer cocktail drink',
     emoji: '🥤'
   },
   {
-    keywords: ['falafel'],
+    keyword: 'falafel',
     emoji: '🧆'
   },
   {
-    keywords: ['fish'],
+    keyword: 'fish',
     emoji: '🐟'
   },
   {
-    keywords: ['fish', 'tropical fish'],
+    keyword: 'fish tropical fish',
     emoji: '🐠'
   },
   {
-    keywords: ['fish', 'blowfish'],
+    keyword: 'fish blowfish',
     emoji: '🐡'
   },
   {
-    keywords: ['fish', 'shark'],
+    keyword: 'fish shark',
     emoji: '🦈'
   },
   {
-    keywords: ['peanut', 'nut'],
+    keyword: 'peanut nut',
     emoji: '🥜'
   },
   {
-    keywords: ['rice', 'cooked rice'],
+    keyword: 'rice cooked rice',
     emoji: '🍚'
   },
   {
-    keywords: ['rice', 'rice craker'],
+    keyword: 'rice rice craker',
     emoji: '🍘'
   },
   {
-    keywords: ['rice', 'rice ball'],
+    keyword: 'rice rice ball',
     emoji: '🍙'
   },
   {
-    keywords: ['curry', 'curry rice'],
+    keyword: 'curry curry rice',
     emoji: '🍛'
   },
   {
-    keywords: ['fish cake'],
+    keyword: 'fish cake',
     emoji: '🍥'
   },
   {
-    keywords: ['ramen', 'udon'],
+    keyword: 'ramen udon',
     emoji: '🍜'
   },
   {
-    keywords: ['spaghetti', 'pasta'],
+    keyword: 'spaghetti pasta',
     emoji: '🍝'
   },
   {
-    keywords: ['bread'],
+    keyword: 'bread',
     emoji: '🍞'
   },
   {
-    keywords: ['fries'],
+    keyword: 'fries',
     emoji: '🍟'
   },
   {
-    keywords: ['sweet potato'],
+    keyword: 'sweet potato',
     emoji: '🍠'
   },
   {
-    keywords: ['sushi'],
+    keyword: 'sushi',
     emoji: '🍣'
   },
   {
-    keywords: ['shrimp'],
+    keyword: 'shrimp',
     emoji: '🍤'
   },
   {
-    keywords: ['doughnut'],
+    keyword: 'doughnut',
     emoji: '🍩'
   },
   {
-    keywords: ['cookie'],
+    keyword: 'cookie',
     emoji: '🍪'
   },
   {
-    keywords: ['cake', 'shortcake'],
+    keyword: 'cake shortcake',
     emoji: '🍰'
   },
   {
-    keywords: ['ice cream'],
+    keyword: 'ice cream',
     emoji: '🍨'
   },
   {
-    keywords: ['soft serve', 'ice cream'],
+    keyword: 'soft serve ice cream',
     emoji: '🍦'
   },
   {
-    keywords: ['shaved ice', 'snowcone'],
+    keyword: 'shaved ice snowcone',
     emoji: '🍧'
   },
   {
-    keywords: ['cake', 'birthday cake'],
+    keyword: 'birthday cake',
     emoji: '🎂'
   },
   {
-    keywords: ['chocolate'],
+    keyword: 'chocolate',
     emoji: '🍫'
   },
   {
-    keywords: ['candy'],
+    keyword: 'candy',
     emoji: '🍬'
   },
   {
-    keywords: ['lollipop'],
+    keyword: 'lollipop',
     emoji: '🍭'
   },
   {
-    keywords: ['custard'],
+    keyword: 'custard',
     emoji: '🍮'
   },
   {
-    keywords: ['dango'],
+    keyword: 'dango',
     emoji: '🍡'
   },
   {
-    keywords: ['pie'],
+    keyword: 'pie',
     emoji: '🥧'
   },
   {
-    keywords: ['tomato'],
+    keyword: 'tomato',
     emoji: '🍅'
   },
   {
-    keywords: ['eggplant'],
+    keyword: 'eggplant',
     emoji: '🍆'
   },
   {
-    keywords: ['grape'],
+    keyword: 'grape',
     emoji: '🍇'
   },
   {
-    keywords: ['melon'],
+    keyword: 'melon',
     emoji: '🍈'
   },
   {
-    keywords: ['watermelon'],
+    keyword: 'watermelon',
     emoji: '🍉'
   },
   {
-    keywords: ['tangerine'],
+    keyword: 'tangerine',
     emoji: '🍊'
   },
   {
-    keywords: ['banana'],
+    keyword: 'banana',
     emoji: '🍌'
   },
   {
-    keywords: ['pineapple'],
+    keyword: 'pineapple',
     emoji: '🍍'
   },
   {
-    keywords: ['peach'],
+    keyword: 'peach',
     emoji: '🍑'
   },
   {
-    keywords: ['cherry', 'cherries'],
+    keyword: 'cherry cherries',
     emoji: '🍒'
   },
   {
-    keywords: ['strawberry', 'strawberries'],
+    keyword: 'strawberry strawberries',
     emoji: '🍓'
   },
   {
-    keywords: ['kiwi'],
+    keyword: 'kiwi',
     emoji: '🥝'
   },
   {
-    keywords: ['lemon'],
+    keyword: 'lemon',
     emoji: '🍋'
   },
   {
-    keywords: ['mango'],
+    keyword: 'mango',
     emoji: '🥭'
   },
   {
-    keywords: ['apple', 'red apple'],
+    keyword: 'apple red apple',
     emoji: '🍎'
   },
   {
-    keywords: ['apple', 'green apple'],
+    keyword: 'apple green apple',
     emoji: '🍏'
   },
   {
-    keywords: ['pear'],
+    keyword: 'pear',
     emoji: '🍐'
   },
   {
-    keywords: ['corn'],
+    keyword: 'corn',
     emoji: '🌽'
   },
   {
-    keywords: ['pepper', 'jalapeno', 'spicy', 'hot'],
+    keyword: 'pepper jalapeno spicy hot',
     emoji: '🌶'
   },
   {
-    keywords: ['mushroom'],
+    keyword: 'mushroom',
     emoji: '🍄'
   },
   {
-    keywords: ['coconut'],
+    keyword: 'coconut',
     emoji: '🥥'
   },
   {
-    keywords: ['soup', 'potluck'],
+    keyword: 'soup potluck',
     emoji: '🍲'
   },
   {
-    keywords: ['croissant', 'crescent roll'],
+    keyword: 'croissant crescent roll',
     emoji: '🥐'
   },
   {
-    keywords: ['avocado'],
+    keyword: 'avocado',
     emoji: '🥑'
   },
   {
-    keywords: ['leafy', 'celery'],
+    keyword: 'leafy celery',
     emoji: '🥬'
   },
   {
-    keywords: ['broccoli'],
+    keyword: 'broccoli',
     emoji: '🥦'
   },
   {
-    keywords: ['garlic', 'clove'],
+    keyword: 'garlic clove',
     emoji: '🧄'
   },
   {
-    keywords: ['onion'],
+    keyword: 'onion',
     emoji: '🧅'
   },
   {
-    keywords: ['chesnut', 'nut'],
+    keyword: 'chesnut nut',
     emoji: '🌰'
   },
   {
-    keywords: ['cactus'],
+    keyword: 'cactus',
     emoji: '🌵'
   },
   {
-    keywords: ['herb', 'thyme', 'basil', 'mint', 'cilantro', 'dill', 'parsley'],
+    keyword: 'herb thyme basil mint cilantro dill parsley',
     emoji: '🌿'
   },
   {
-    keywords: ['cucumber', 'pickle'],
+    keyword: 'cucumber pickle',
     emoji: '🥒'
   },
   {
-    keywords: ['bacon'],
+    keyword: 'bacon',
     emoji: '🥓'
   },
   {
-    keywords: ['potato'],
+    keyword: 'potato',
     emoji: '🥔'
   },
   {
-    keywords: ['carrot'],
+    keyword: 'carrot',
     emoji: '🥕'
   },
   {
-    keywords: ['baguette'],
+    keyword: 'baguette',
     emoji: '🥖'
   },
   {
-    keywords: ['salad'],
+    keyword: 'salad',
     emoji: '🥗'
   },
   {
-    keywords: ['flatbread'],
+    keyword: 'flatbread',
     emoji: '🥙'
   },
   {
-    keywords: ['egg'],
+    keyword: 'egg',
     emoji: '🥚'
   },
   {
-    keywords: ['coffee'],
+    keyword: 'coffee',
     emoji: '☕'
   },
 ];
 
-const convertToEmojis = (string, amountToReturn = 1) => {
-  const words = string.toLowerCase().trim().split(' ');
-  let emojis = [];
-
-  foodEmojis.forEach((emoji) => {
-    const result = words.filter(word => 
-      emoji.keywords.some(re => re.includes(word))
-    );
-
-    if (result.length > 0) {
-      emojis.push(emoji.emoji);
-    } 
-  });
-
-  return emojis.slice(0, amountToReturn);
+const convertToEmojis = (string) => {
+  return bestMatch(string, foodEmojis);
 }
+
+// https://stackoverflow.com/questions/35650426/find-the-best-match-on-multiple-keywords-with-regular-expression-in-js
+// https://en.wikipedia.org/wiki/Levenshtein_distance
+
+const bestMatch = (query, array) => {
+   var temp = array.map(function(item) {
+     item.distance = getEditDistance(query, item.keyword)
+     return item;
+   })
+   temp.sort(function(a,b) {
+     if (a.distance < b.distance) return -1
+     else if (a.distance > b.distance) return 1
+     else return 0;
+   })
+
+   return temp[0].emoji
+}
+
+const getEditDistance = function(a, b){
+  if(a.length == 0) return b.length; 
+  if(b.length == 0) return a.length; 
+
+  var matrix = [];
+
+  // increment along the first column of each row
+  var i;
+  for(i = 0; i <= b.length; i++){
+    matrix[i] = [i];
+  }
+
+  // increment each column in the first row
+  var j;
+  for(j = 0; j <= a.length; j++){
+    matrix[0][j] = j;
+  }
+
+  // Fill in the rest of the matrix
+  for(i = 1; i <= b.length; i++){
+    for(j = 1; j <= a.length; j++){
+      if(b.charAt(i-1) == a.charAt(j-1)){
+        matrix[i][j] = matrix[i-1][j-1];
+      } else {
+        matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, // substitution
+                                Math.min(matrix[i][j-1] + 1, // insertion
+                                         matrix[i-1][j] + 1)); // deletion
+      }
+    }
+  }
+
+  return matrix[b.length][a.length];
+};
 
 export { convertToEmojis };
