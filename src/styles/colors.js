@@ -16,6 +16,11 @@ const COLORS = {
 
   primary: {
     500: '#0029FF'
+  },
+  gradients: {
+    sunset: ['#FF4D7E', '#FFBD3E'],
+    night: ['#9A5CFF', '#FC5FB4'],
+    day: ['#18C3CE', '#31A4F8']
   }
 }
 
