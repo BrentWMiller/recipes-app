@@ -35,13 +35,14 @@ function ImagePlaceholder(props) {
     }
   });
 
+  title = count === 'emoji' ? title : title.substring(0, count);
 
   return (
     <View style={[style, styles.wrapper]}>
       {
         image
         ? <Image style={styles.image} source={image} />
-        : <Text style={styles.title}>{ title.substring(0, count) }</Text>
+        : <Text style={styles.title}>{ title }</Text>
       }
     </View>
   );
