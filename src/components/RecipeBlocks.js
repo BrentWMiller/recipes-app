@@ -18,9 +18,9 @@ const RecipeBlocks = (props) => {
       <View style={{ marginTop: 20 }}>
         {
           recipes.length > 0
-            ? <View>
-                {recipes.map((recipe) => (
-                  <RecipeBlock key={recipe.id} recipe={ recipe } />
+            ? <View style={[APP.containerWider]}>
+                {recipes.map((recipe, index) => (
+                  <RecipeBlock key={recipe.id} recipe={ recipe } first={index === 0}/>
                 ))}
               </View>
             : <Text>No recipes created yet.</Text>
