@@ -15,14 +15,14 @@ const RecipeBlocks = (props) => {
         <AppLink title="View all" />
       </View>
 
-      <View style={{ marginTop: 20 }}>
+      <View style={[[APP.containerWider], { marginTop: 20 }]}>
         {
           recipes.length > 0
-            ? <View style={[APP.containerWider]}>
+            ? <>
                 {recipes.map((recipe, index) => (
                   <RecipeBlock key={recipe.id} recipe={ recipe } first={index === 0}/>
                 ))}
-              </View>
+              </>
             : <Text>No recipes created yet.</Text>
         }
       </View>
