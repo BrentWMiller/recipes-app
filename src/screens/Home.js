@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, View } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 import RecipeSearchInput from "~components/RecipeSearchInput";
 import APP from "~styles/app";
 import CategoryBlocks from "~components/CategoryBlocks";
@@ -80,23 +80,24 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <SafeAreaView>
+      <ScrollView>
+        <View style={[APP.container, {flexDirection: 'row', justifyContent: 'space-between', paddingTop: 20}]}>
+          <Greeting name={user.name} />
+          <UserAvatar initials={user.name} onPress={() => console.log('User profile')} />
+        </View>
 
-      <View style={[APP.container, {flexDirection: 'row', justifyContent: 'space-between', paddingTop: 20}]}>
-        <Greeting name={user.name} />
-        <UserAvatar initials={user.name} onPress={() => console.log('User profile')} />
-      </View>
+        <View style={[APP.container, {flexDirection: 'row', marginTop: 40}]}>
+          <RecipeSearchInput />
+        </View>
 
-      <View style={[APP.container, {flexDirection: 'row', marginTop: 40}]}>
-        <RecipeSearchInput />
-      </View>
+        <View style={{marginTop: 40}}>
+          <CategoryBlocks categories={ categories } />
+        </View>
 
-      <View style={{marginTop: 40}}>
-        <CategoryBlocks categories={ categories } />
-      </View>
-
-      <View style={{marginTop: 40}}>
-        <RecipeBlocks recipes={recipes}/>
-      </View>
+        <View style={{marginTop: 40}}>
+          <RecipeBlocks recipes={recipes}/>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
