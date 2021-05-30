@@ -24,7 +24,12 @@ const CategoryBlocks = (props) => {
                 showsHorizontalScrollIndicator={false}
               >
                 {categories.map((category, index) => (
-                  <CategoryBlock key={category.id} category={ category } first={index === 0} last={index === categories.length - 1} />
+                  <CategoryBlock
+                    key={category.id}
+                    category={ category }
+                    first={index === 0}
+                    last={index === categories.length - 1}
+                  />
                 ))}
               </ScrollView>
             : <Text>No categories created yet.</Text>
