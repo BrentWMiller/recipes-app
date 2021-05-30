@@ -180,23 +180,23 @@ const foodEmojis = [
     emoji: '🥜'
   },
   {
-    keyword: 'rice cooked rice',
+    keyword: 'rice cooked',
     emoji: '🍚'
   },
   {
-    keyword: 'rice rice craker',
+    keyword: 'rice cracker',
     emoji: '🍘'
   },
   {
-    keyword: 'rice rice ball',
+    keyword: 'rice ball',
     emoji: '🍙'
   },
   {
-    keyword: 'curry curry rice',
+    keyword: 'curry rice',
     emoji: '🍛'
   },
   {
-    keyword: 'fish cake',
+    keyword: 'fishcake',
     emoji: '🍥'
   },
   {
@@ -442,13 +442,15 @@ const foodEmojis = [
 ];
 
 const convertToEmojis = (string) => {
-  return bestMatch(string, foodEmojis);
+  const matches = emojiMatches(string, foodEmojis);
+
+  return matches[0].emoji;
 }
 
 // https://stackoverflow.com/questions/35650426/find-the-best-match-on-multiple-keywords-with-regular-expression-in-js
 // https://en.wikipedia.org/wiki/Levenshtein_distance
 
-const bestMatch = (query, array) => {
+const emojiMatches = (query, array) => {
    var temp = array.map(function(item) {
      item.distance = getEditDistance(query, item.keyword)
      return item;
@@ -459,7 +461,7 @@ const bestMatch = (query, array) => {
      else return 0;
    })
 
-   return temp[0].emoji
+   return temp;
 }
 
 const getEditDistance = function(a, b){

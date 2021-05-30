@@ -56,7 +56,7 @@ const HomeScreen = ({navigation}) => {
       name: 'Mom\'s Homemade Spaghetti w/ Meatballs',
       time: 60,
       ingredients: 6,
-      image: require('../../assets/test/recipe2.jpg'),
+      // image: require('../../assets/test/recipe2.jpg'),
     },
     {
       id: '6',
@@ -99,6 +99,12 @@ const HomeScreen = ({navigation}) => {
       name: 'Creamy Italian Chicken',
       time: 45,
       ingredients: 15
+    },
+    {
+      id: '11',
+      name: 'Pinot Noir',
+      time: 0,
+      ingredients: 1
     },
   ];
 
