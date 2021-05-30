@@ -54,9 +54,15 @@ const HomeScreen = ({navigation}) => {
     },
     {
       id: '2',
-      name: 'Mom\'s Homemade Speghetti w/ Meatballs',
+      name: 'Mom\'s Homemade Spaghetti w/ Meatballs',
       time: 60,
       ingredients: 6
+    },
+    {
+      id: '6',
+      name: 'Long named recipe that someone could add to the app',
+      time: 61,
+      ingredients: 24
     },
     {
       id: '3',
