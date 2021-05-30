@@ -26,7 +26,7 @@ function RecipeBlock(props) {
     <View style={styles.wrapper}>
       <Placeholder title={ recipe.name } size={ 75 } style={{ marginRight: 16 }}/>
 
-      <View style={{ flexShrink: 1 }}>
+      <View style={{ flexShrink: 1, width: '100%'}}>
         <Text
           style={[TYPOGRAPHY.subheading, { marginBottom: 8 }]}
           numberOfLines={ 2 }
@@ -36,8 +36,8 @@ function RecipeBlock(props) {
         </Text>
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <TimeFormatted time={recipe.time} style={[TYPOGRAPHY.body, {color: COLORS.gray[500]}]} />
-          <Text style={[TYPOGRAPHY.body, {color: COLORS.gray[500]}]}>{ recipe.ingredients } ingredients</Text>
+          <TimeFormatted time={recipe.time} style={[{fontSize: 14, color: COLORS.gray[500]}]} />
+          <Text style={[{fontSize: 14, color: COLORS.gray[500]}]}>{ recipe.ingredients } ingredients</Text>
         </View>
       </View>
     </View>
