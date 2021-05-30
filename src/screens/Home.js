@@ -14,22 +14,21 @@ const HomeScreen = ({navigation}) => {
 
   const categories = [
     {
+      id: '3',
+      title: 'Dinner for Winners',
+      recipesCount: 26
+    },
+    {
       id: '1',
       title: 'Delicious Breakfast Favorites',
-      image: require('../../assets/test/recipe.jpg'),
+      // image: require('../../assets/test/recipe.jpg'),
       recipesCount: 4
     },
     {
       id: '2',
-      title: 'Lunch and Brunch',
-      image: require('../../assets/test/recipe5.jpg'),
+      title: 'Brunch and Lunch',
+      // image: require('../../assets/test/recipe5.jpg'),
       recipesCount: 14
-    },
-    {
-      id: '3',
-      title: 'Dinner for Winners',
-      image: require('../../assets/test/recipe2.jpg'),
-      recipesCount: 26
     },
     {
       id: '4',
