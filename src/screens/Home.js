@@ -77,6 +77,12 @@ const HomeScreen = ({navigation}) => {
       ingredients: 4
     },
     {
+      id: '8',
+      name: 'Fish Tacos',
+      time: 45,
+      ingredients: 10
+    },
+    {
       id: '4',
       name: 'Chicken Alfredo',
       time: 50,
@@ -87,6 +93,12 @@ const HomeScreen = ({navigation}) => {
       name: 'Homemade Pizza',
       time: 45,
       ingredients: 10
+    },
+    {
+      id: '10',
+      name: 'Creamy Italian Chicken',
+      time: 45,
+      ingredients: 15
     },
   ];
 
