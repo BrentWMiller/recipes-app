@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import COLORS from '~styles/colors';
 import TYPOGRAPHY from '~styles/typography';
-import Placeholder from './Placeholder';
+import ImagePlaceholder from './ImagePlaceholder';
 import TimeFormatted from './TimeFormatted';
 
 function RecipeBlock(props) {
@@ -14,7 +14,7 @@ function RecipeBlock(props) {
       flexDirection: 'row',
       alignItems: 'center',
       marginTop: first ? 0 : 16,
-      padding: 20,
+      padding: 16,
       borderWidth: 1,
       borderColor: COLORS.gray[200],
       borderRadius: 25,
@@ -24,7 +24,7 @@ function RecipeBlock(props) {
 
   return (
     <View style={styles.wrapper}>
-      <Placeholder title={ recipe.name } size={ 75 } style={{ marginRight: 16 }}/>
+      <ImagePlaceholder title={ recipe.name } size={ 75 } image={ recipe.image } style={{ marginRight: 16 }}/>
 
       <View style={{ flexShrink: 1, width: '100%'}}>
         <Text
