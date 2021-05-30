@@ -21,14 +21,14 @@ function CategoryBlock(props) {
     },
     image: {
       width: ((screen.width / 1.25) - (16 * 2)),
-      height: screen.width,
+      height: screen.width / 1.25,
     },
     description: {
       position: 'absolute',
       bottom: 0,
       left: 0,
       width: '100%',
-      padding: 32,
+      padding: 25,
     }
   })
   
@@ -44,7 +44,7 @@ function CategoryBlock(props) {
           colors={['transparent', 'rgba(0,0,0,0.55)']}
           style={styles.description}
         >
-          <Text style={[{color: COLORS.white, fontSize: 22, fontFamily: FONTS.bold700, marginBottom: 16}]}>{ category.title }</Text>
+          <Text style={[{color: COLORS.white, fontSize: 22, fontFamily: FONTS.bold700, marginBottom: 8}]}>{ category.title }</Text>
           <Text style={[{color: COLORS.gray[200], fontSize: 16}]}>{ category.recipesCount } Recipes</Text>
         </LinearGradient>
       </View>
