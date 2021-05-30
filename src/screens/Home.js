@@ -22,25 +22,25 @@ const HomeScreen = ({navigation}) => {
     {
       id: '2',
       title: 'Lunch and Brunch',
-      image: require('../../assets/test/recipe-alt.jpg'),
+      image: require('../../assets/test/recipe5.jpg'),
       recipesCount: 14
     },
     {
       id: '3',
       title: 'Dinner for Winners',
-      image: require('../../assets/test/recipe.jpg'),
+      image: require('../../assets/test/recipe2.jpg'),
       recipesCount: 26
     },
     {
       id: '4',
       title: 'Delicious Deserts',
-      image: require('../../assets/test/recipe-alt.jpg'),
+      image: require('../../assets/test/recipe3.jpg'),
       recipesCount: 15
     },
     {
       id: '5',
       title: 'Killer Cocktails',
-      image: require('../../assets/test/recipe.jpg'),
+      image: require('../../assets/test/recipe4.jpg'),
       recipesCount: 10
     }
   ];
@@ -50,7 +50,7 @@ const HomeScreen = ({navigation}) => {
       id: '1',
       name: 'Chicken Paprikash',
       time: 30,
-      ingredients: 11
+      ingredients: 11,
     },
     {
       id: '2',
