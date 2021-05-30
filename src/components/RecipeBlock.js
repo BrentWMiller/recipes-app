@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import COLORS from '~styles/colors';
 import TYPOGRAPHY from '~styles/typography';
+import TimeFormatted from './TimeFormatted';
 
 function RecipeBlock(props) {
   const { recipe, first } = props;
-  const timeToString = '';
 
   const styles = StyleSheet.create({
     wrapper: {
@@ -21,9 +21,10 @@ function RecipeBlock(props) {
 
   return (
     <View style={styles.wrapper}>
-      <Text style={[TYPOGRAPHY.subheading]}>{ recipe.name }</Text>
-      <Text>{ recipe.time }</Text>
-      <Text>{ recipe.ingredients }</Text>
+      <Text style={[TYPOGRAPHY.subheading, {marginBottom: 8}]}>{ recipe.name }</Text>
+
+      <TimeFormatted time={recipe.time} style={[TYPOGRAPHY.body, {color: COLORS.gray[500]}]} />
+      <Text style={[TYPOGRAPHY.body, {color: COLORS.gray[500]}]}>{ recipe.ingredients } ingredients</Text>
     </View>
   );
 }
