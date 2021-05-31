@@ -44,3 +44,17 @@ export const signInWithEmailAndPassword = (email, password) => {
     }
   };
 };
+
+export const signOut = () => {
+  return async (dispatch) => {
+    try {
+      await firebase.auth().signOut();
+      dispatch({
+        type: 'user/SET_USER',
+        payload: {},
+      });
+    } catch (error) {
+      throw error;
+    }
+  };
+};
