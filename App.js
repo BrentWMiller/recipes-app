@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import AppLoading from 'expo-app-loading';
+import { firebase } from "./firebase.config";
 import { Inter_500Medium, Inter_600SemiBold, Inter_700Bold, Inter_400Regular} from "@expo-google-fonts/inter";
 import * as Font from 'expo-font';
 import LoggedIn from '~navigation/LoggedIn';
 import LoggedOut from '~navigation/LoggedOut';
 
 export default function App() {
+  const [isAuthenticationReady, setAuthenticationReady] = useState(false);
+  const [isAuthenticated, setAuthenticated] = useState(false);
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   const _loadFontsAsync = async() => {
@@ -21,6 +24,14 @@ export default function App() {
   useEffect(() => {
     _loadFontsAsync();
   }, []);
+
+  // firebase auth
+  onAuthStateChanged = (user) => {
+    setAuthenticationReady(true);
+    setAuthenticated(!!user);
+  };
+
+  firebase.auth().onAuthStateChanged(onAuthStateChanged);
 
   if (!fontsLoaded) {
     return (
