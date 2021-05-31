@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, SafeAreaView, ScrollView, Text } from 'react-native';
+import { firebase } from '~utils/firebase';
 
 const user = {
   name: 'Brent Miller',
