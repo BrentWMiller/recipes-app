@@ -29,7 +29,6 @@ function CreateForm(props) {
           label="Email"
           onChangeText={(text) => setEmail(text)}
           autoCompleteType="email"
-          autoFocus={true}
           autoCorrect={false}
           returnKeyType="next"
           keyboardType="email-address"
