@@ -21,6 +21,12 @@ export const createUserWithEmailAndPassword = (email, password, name) => {
       await userRef.user.updateProfile({
         displayName: name,
       });
+
+      if (userRef) {
+        await firebase.firestore().collection('users')
+          .doc(userRef.user.uid)
+          .set({});
+      }
     } catch (error) {
       throw error;
     }
