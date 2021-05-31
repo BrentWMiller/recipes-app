@@ -23,7 +23,7 @@ function RecipeBlock(props) {
     }
   });
 
-  const nameToEmoji = convertToEmojis(recipe.name);
+  const nameToEmoji = convertToEmojis(recipe.name, 1);
 
   return (
     <View style={styles.wrapper}>
