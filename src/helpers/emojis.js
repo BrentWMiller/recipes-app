@@ -36,6 +36,10 @@ const foodEmojis = [
     emoji: '🧇'
   },
   {
+    keywords: ['birthday  cake', 'cake'],
+    emoji: '🎂'
+  },
+  {
     keywords: ['pancake', 'pancakes'],
     emoji: '🥞'
   },
@@ -250,10 +254,6 @@ const foodEmojis = [
   {
     keywords: ['shaved ice', 'snowcone'],
     emoji: '🍧'
-  },
-  {
-    keywords: ['cake', 'birthday cake'],
-    emoji: '🎂'
   },
   {
     keywords: ['chocolate'],
