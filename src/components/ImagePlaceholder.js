@@ -7,6 +7,7 @@ function ImagePlaceholder(props) {
   let { title, image, count, size, bgStyle, textStyle, style } = props;
 
   // Set defaults
+  title = title ? title : '';
   count = count ? count : 2;
   size = size ? size : 50;
   bgStyle = bgStyle ? [bgStyle] : {backgroundColor: COLORS.black};
@@ -32,7 +33,7 @@ function ImagePlaceholder(props) {
       height: size
     }
   });
-
+  
   title = count === 'emoji' ? title : title.substring(0, count);
 
   return (
