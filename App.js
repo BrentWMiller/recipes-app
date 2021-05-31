@@ -3,6 +3,7 @@ import AppLoading from 'expo-app-loading';
 import { Inter_500Medium, Inter_600SemiBold, Inter_700Bold, Inter_400Regular} from "@expo-google-fonts/inter";
 import * as Font from 'expo-font';
 import LoggedIn from '~navigation/LoggedIn';
+import LoggedOut from '~navigation/LoggedOut';
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -26,6 +27,6 @@ export default function App() {
       <AppLoading />
     );
   } else {
-    return LoggedIn();
+    return LoggedOut();
   }
 }
