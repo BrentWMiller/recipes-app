@@ -14,8 +14,6 @@ function LoginForm(props) {
   const submit = async() => {
     try {
       await dispatch(signInWithEmailAndPassword(email, password));
-      setEmail('');
-      setPassword('');
     } catch (error) {
       alert(error);
     }

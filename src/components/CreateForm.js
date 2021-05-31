@@ -15,9 +15,6 @@ function CreateForm(props) {
   const submit = async () => {
     try {
       await dispatch(createUserWithEmailAndPassword(email, password, name));
-      setName('');
-      setEmail('');
-      setPassword('');
     } catch (error) {
       alert(error);
     }
