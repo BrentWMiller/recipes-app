@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView, KeyboardAvoidingView } from "react-native";
 import AppLink from '~components/AppLink';
 import CreateForm from '~components/CreateForm';
 import DismissKeyboard from '~components/DismissKeyboard';
@@ -11,18 +11,22 @@ function CreateScreen(props) {
 
   return (
     <DismissKeyboard>
-      <SafeAreaView>
-        <View style={[APP.container]}>
-          <Text style={[TYPOGRAPHY.heading]}>Create an account</Text>
+      <SafeAreaView style={{ flex: 1, justifyContent: 'center' }}>
+        <ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}>
+          <KeyboardAvoidingView behavior="padding" enabled>
+            <View style={[APP.container]}>
+              <Text style={[TYPOGRAPHY.heading]}>Create an account</Text>
 
-          <CreateForm />
+              <CreateForm />
 
-          <AppLink
-            title="I already have an account."
-            style={{ marginTop: 20 }}
-            onPress={() => navigation.navigate('Login')}
-          />
-        </View>
+              <AppLink
+                title="I already have an account."
+                style={{ marginTop: 20 }}
+                onPress={() => navigation.navigate('Login')}
+              />
+            </View>
+          </KeyboardAvoidingView>
+        </ScrollView>
       </SafeAreaView>
     </DismissKeyboard>
   );
