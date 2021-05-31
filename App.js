@@ -38,8 +38,9 @@ const AppInner = () => {
         payload: { email: user.email, uid: user.uid, name: user.displayName },
       });
       setAuthenticationReady(true);
-      setAuthenticated(authenticated);
     }
+
+    setAuthenticated(authenticated);
   };
 
   firebase.auth().onAuthStateChanged(onAuthStateChanged);
