@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, Text } from 'react-native';
+import { Button, SafeAreaView, ScrollView, Text } from 'react-native';
 
 const user = {
   name: 'Brent Miller',
@@ -12,6 +12,7 @@ function ProfileScreen({navigation}) {
       <ScrollView>
         <Text>{ user.email }</Text>
         <Text>{ user.name }</Text>
+        <Button onPress={() => firebase.auth().signOut()} title="Sign out"></Button>
       </ScrollView>
     </SafeAreaView>
   );
