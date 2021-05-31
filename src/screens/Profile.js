@@ -1,13 +1,11 @@
 import React from 'react';
 import { Button, SafeAreaView, ScrollView, Text } from 'react-native';
+import { useSelector } from 'react-redux';
 import { firebase } from '~utils/firebase';
 
-const user = {
-  name: 'Brent Miller',
-  email: 'brentm@recipes.com'
-}
-
 function ProfileScreen({navigation}) {
+  const user = useSelector(state => state.userReducer.user);
+
   return (
     <SafeAreaView>
       <ScrollView>

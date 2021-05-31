@@ -6,11 +6,10 @@ import CategoryBlocks from "~components/CategoryBlocks";
 import RecipeBlocks from "~components/RecipeBlocks";
 import Greeting from "~components/Greeting";
 import UserAvatar from "~components/UserAvatar";
+import { useSelector } from "react-redux";
 
 const HomeScreen = ({navigation}) => {
-  const user = {
-    name: 'Brent Miller'
-  }
+  const user = useSelector(state => state.userReducer.user);
 
   const categories = [
     {

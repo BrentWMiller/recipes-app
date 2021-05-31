@@ -5,13 +5,14 @@ import { Inter_500Medium, Inter_600SemiBold, Inter_700Bold, Inter_400Regular} fr
 import * as Font from 'expo-font';
 import LoggedIn from '~navigation/LoggedIn';
 import LoggedOut from '~navigation/LoggedOut';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import store from '~store/store';
 
-export default function App() {
+const AppInner = () => {
+  const dispatch = useDispatch();
   const [isAuthenticationReady, setAuthenticationReady] = useState(false);
   const [isAuthenticated, setAuthenticated] = useState(false);
-  const [fontsLoaded, setFontsLoaded] = useState(false);
+  const [fontsLoading, setFontsLoading] = useState(true);
 
   const _loadFontsAsync = async() => {
     await Font.loadAsync({
@@ -20,7 +21,7 @@ export default function App() {
       'Inter600': Inter_600SemiBold,
       'Inter700': Inter_700Bold,
     });
-    setFontsLoaded(true);
+    setFontsLoading(false);
   };
 
   useEffect(() => {
@@ -29,27 +30,41 @@ export default function App() {
 
   // firebase auth
   onAuthStateChanged = (user) => {
-    setAuthenticationReady(true);
-    setAuthenticated(!!user);
+    const authenticated = (user?.uid && user.uid !== '') || false;
+
+    if (authenticated) {
+      dispatch({
+        type: 'user/SET_USER',
+        payload: { email: user.email, uid: user.uid, name: user.displayName },
+      });
+      setAuthenticationReady(true);
+      setAuthenticated(authenticated);
+    }
   };
 
   firebase.auth().onAuthStateChanged(onAuthStateChanged);
 
-  if (!fontsLoaded) {
+  if (fontsLoading) {
     return (
       <AppLoading />
     );
-  } else if (isAuthenticationReady && isAuthenticated) {
+  }
+  
+  if (!fontsLoading && (isAuthenticationReady && isAuthenticated)) {
     return (
-      <Provider store={store}>
-        {LoggedIn()}
-      </Provider>
+      <LoggedIn />
     )
   } else {
     return (
-      <Provider store={store}>
-        {LoggedOut()}
-      </Provider>
+      <LoggedOut />
     )
   }
+}
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <AppInner />
+    </Provider>
+  );
 }
