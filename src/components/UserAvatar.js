@@ -3,11 +3,11 @@ import { Pressable } from 'react-native';
 import ImagePlaceholder from './ImagePlaceholder';
 
 function UserAvatar(props) {
-  const { onPress, initials } = props;
+  const { onPress, name } = props;
 
   return (
     <Pressable onPress={onPress}>
-      <ImagePlaceholder title={ initials } />
+      <ImagePlaceholder title={ name } />
     </Pressable>
   );
 }

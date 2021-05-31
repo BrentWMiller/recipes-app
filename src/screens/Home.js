@@ -124,7 +124,7 @@ const HomeScreen = ({navigation}) => {
       <ScrollView>
         <View style={[APP.container, {flexDirection: 'row', justifyContent: 'space-between', paddingTop: 20}]}>
           <Greeting name={user.name} />
-          <UserAvatar initials={user.name} onPress={() => navigation.navigate('Profile')} />
+          <UserAvatar name={user.name} onPress={() => navigation.navigate('Profile')} />
         </View>
 
         <View style={[APP.container, {flexDirection: 'row', marginTop: 40}]}>
