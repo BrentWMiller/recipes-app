@@ -14,6 +14,8 @@ module.exports = function (api) {
             '~navigation': ['./src/navigation'],
             '~svgs': ['./assets/svgs'],
             '~helpers': ['./src/helpers'],
+            '~store': ['./src/store'],
+            '~utils': ['./src/utils'],
           },
         },
       ],
