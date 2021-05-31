@@ -4,17 +4,26 @@ import { useState } from 'react/cjs/react.development';
 import AppButton from './AppButton';
 import InputWithLabel from './InputWithLabel';
 
-function LoginForm(props) {
+function CreateForm(props) {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const submit = () => {
-    console.log(email, password);
+    console.log(name, email, password);
   }
   
   return (
     <View>
       <View style={{marginTop: 20}}>
+        <InputWithLabel
+          style={{marginBottom: 8}}
+          label="Name"
+          onChangeText={(text) => setName(text)}
+          autoFocus={true}
+          autoCorrect={false}
+          returnKeyType="next"
+        />
         <InputWithLabel
           style={{marginBottom: 8}}
           label="Email"
@@ -36,10 +45,10 @@ function LoginForm(props) {
       </View>
 
       <View style={{marginTop: 20}}>
-        <AppButton title="Sign in" type="dark" onPress={() => submit()}></AppButton>
+        <AppButton title="Create account" type="dark" onPress={() => submit()}></AppButton>
       </View>
     </View>
   );
 }
 
-export default LoginForm;
+export default CreateForm;
