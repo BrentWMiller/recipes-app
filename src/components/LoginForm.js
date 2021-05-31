@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView, Text, View } from 'react-native';
 import { useState } from 'react/cjs/react.development';
 import APP from '~styles/app';
 import TYPOGRAPHY from '~styles/typography';
+import AppButton from './AppButton';
 import InputWithLabel from './InputWithLabel';
 
 function LoginForm(props) {
@@ -37,6 +38,10 @@ function LoginForm(props) {
             secureTextEntry={true}
             onSubmitEditing={() => login()}
           />
+        </View>
+
+        <View style={{marginTop: 20}}>
+          <AppButton title="Sign in" type="dark"></AppButton>
         </View>
       </View>
     </SafeAreaView>
