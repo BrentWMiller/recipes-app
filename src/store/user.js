@@ -26,3 +26,21 @@ export const createUserWithEmailAndPassword = (email, password, name) => {
     }
   };
 };
+
+export const signInWithEmailAndPassword = (email, password) => {
+  return async (dispatch) => {
+    try {
+      const userCredential = await firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password);
+      const { user } = userCredential;
+
+      dispatch({
+        type: 'user/SET_USER',
+        payload: { email: user.email, uid: user.uid, name: user.displayName },
+      });
+    } catch (error) {
+      throw error;
+    }
+  };
+};

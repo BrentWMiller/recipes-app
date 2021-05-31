@@ -1,15 +1,24 @@
 import React from 'react';
 import { View } from 'react-native';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react/cjs/react.development';
+import { signInWithEmailAndPassword } from '~store/user';
 import AppButton from './AppButton';
 import InputWithLabel from './InputWithLabel';
 
 function LoginForm(props) {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const submit = () => {
-    console.log(email, password);
+  const submit = async() => {
+    try {
+      await dispatch(signInWithEmailAndPassword(email, password));
+      setEmail('');
+      setPassword('');
+    } catch (error) {
+      alert(error);
+    }
   }
   
   return (
