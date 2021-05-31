@@ -5,6 +5,7 @@ import FONTS from '~styles/fonts';
 
 function InputWithLabel(props) {
   const label = props.label;
+  const description = props.description;
   const [isFocused, setIsFocused] = React.useState(false);
 
   return (
@@ -36,6 +37,7 @@ function InputWithLabel(props) {
           setIsFocused(false);
         }}
       />
+      <Text style={[styles.description, {marginTop: description ? 8: 0}]}>{ description }</Text>
     </View>
   );
 }
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     fontSize: 16,
     fontFamily: FONTS.semibold600,
-    color: COLORS.gray[600]
+    color: COLORS.gray[800]
   },
   input: {
     height: 50,
@@ -53,8 +55,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderRadius: 5,
     fontFamily: FONTS.medium500,
-    color: COLORS.gray[500],
     backgroundColor: COLORS.gray[100],
+  },
+  description: {
+    fontSize: 14,
+    color: COLORS.gray[500]
   }
 })
 
