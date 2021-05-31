@@ -106,6 +106,18 @@ const HomeScreen = ({navigation}) => {
       time: 0,
       ingredients: 1
     },
+    {
+      id: '12',
+      name: 'Philly Sushi Roll',
+      time: 20,
+      ingredients: 6
+    },
+    {
+      id: '13',
+      name: 'Beef Tips',
+      time: 8 * 60,
+      ingredients: 10
+    },
   ];
 
   return (
