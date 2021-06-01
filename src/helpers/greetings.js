@@ -57,16 +57,20 @@ const timeGreetings = [
   {
     start: 0,
     end: 2400,
-    message: 'Welcome back! 👋'
+    message: 'Hey there! 👋'
   }
 ]
+
+const padMinutes = (num, size) => {
+  return ('000000000' + num).substr(-size);
+}
 
 export const getTimebasedGreeting = () => {
   // Get the time of day
   const today = new Date();
   const hour = today.getHours();
   const minute = today.getMinutes();
-  const timeString = `${hour}${minute}`;
+  const timeString = `${hour}${padMinutes(minute, 2)}`;
   const time = parseInt(timeString);
 
   // Look for an appropriate greeting
