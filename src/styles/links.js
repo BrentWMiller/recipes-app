@@ -11,7 +11,7 @@ const defaultStyle = {
 
 const LINKS = StyleSheet.create({
   default: {
-    ...defaultStyle
+    ...defaultStyle,
   },
 });
 

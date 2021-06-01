@@ -4,7 +4,8 @@ import FONTS from "./fonts";
 const TYPOGRAPHY = StyleSheet.create({
   body: {
     fontFamily: FONTS.normal400,
-    fontSize: 16
+    fontSize: 16,
+    lineHeight: 24
   },
   heading: {
     fontFamily: FONTS.bold700,

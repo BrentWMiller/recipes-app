@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { SafeAreaView, ScrollView, View, Text } from "react-native";
 import RecipeSearchInput from "~components/RecipeSearchInput";
 import APP from "~styles/app";
 import CategoryBlocks from "~components/CategoryBlocks";
@@ -31,7 +31,7 @@ const HomeScreen = ({navigation}) => {
           <CategoryBlocks categories={ categories } navigation={ navigation } />
         </View>
 
-        <View style={{marginTop: 40}}>
+        <View style={{marginVertical: 40}}>
           <RecipeBlocks recipes={recipes} navigation={ navigation } />
         </View>
       </ScrollView>
