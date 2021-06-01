@@ -12,18 +12,20 @@ const RecipeBlocks = (props) => {
     <View>
       <View style={[APP.container, {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}]}>
         <Text style={[TYPOGRAPHY.subheading]}>Recipes</Text>
-        <AppLink title="View all" onPress={() => navigation.navigate('Recipes')} />
+        { recipes.length > 1 && <AppLink title="View all" onPress={() => navigation.navigate('Recipes')} /> }
       </View>
 
-      <View style={[[APP.containerWider], { marginTop: 20 }]}>
+      <View style={[{ marginTop: 20 }]}>
         {
           recipes.length > 0
-            ? <>
+            ? <View style={[APP.containerWider]}>
                 {recipes.map((recipe, index) => (
                   <RecipeBlock key={recipe.id} recipe={ recipe } first={index === 0}/>
                 ))}
-              </>
-            : <Text>No recipes created yet.</Text>
+              </View>
+            : <View style={[APP.container]}>
+                <Text style={[TYPOGRAPHY.body]}>You haven't created any recipes yet.</Text>
+              </View>
         }
       </View>
     </View>

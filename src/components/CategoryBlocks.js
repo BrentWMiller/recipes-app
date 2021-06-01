@@ -12,7 +12,7 @@ const CategoryBlocks = (props) => {
     <View>
       <View style={[APP.container, {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}]}>
         <Text style={[TYPOGRAPHY.subheading]}>Categories</Text>
-        <AppLink title="View all" onPress={() => navigation.navigate('Categories')} />
+        { categories.length > 1 && <AppLink title="View all" onPress={() => navigation.navigate('Categories')} /> }
       </View>
 
       <View style={{ marginTop: 20 }}>
@@ -32,7 +32,9 @@ const CategoryBlocks = (props) => {
                   />
                 ))}
               </ScrollView>
-            : <Text>No categories created yet.</Text>
+            : <View style={[APP.container]}>
+                <Text style={[TYPOGRAPHY.body]}>Add recipes to start seeing categories.</Text>
+              </View>
         }
       </View>
     </View>
