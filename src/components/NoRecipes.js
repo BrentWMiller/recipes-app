@@ -17,7 +17,7 @@ function NoRecipes(props) {
     <View style={[APP.container]}>
       <Text style={[TYPOGRAPHY.body]}>This is where your recently created recipes will appear. Let's get started by adding your first one.</Text>
 
-      <Pressable style={styles.addBlock} onPress>
+      <Pressable style={styles.addBlock} onPress={() => addRecipe()}>
         <Text style={[TYPOGRAPHY.body, { fontFamily: FONTS.medium500, color: COLORS.white }]}>Add a new recipe</Text>
       </Pressable>
 
