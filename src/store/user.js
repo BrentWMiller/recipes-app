@@ -2,7 +2,11 @@ import { firebase } from '~utils/firebase';
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
-  user: {},
+  user: {
+    uid: null,
+    name: '',
+    email: ''
+  },
 };
 
 export const userReducer = createReducer(initialState, {
@@ -18,14 +22,12 @@ export const createUserWithEmailAndPassword = (email, password, name) => {
         .auth()
         .createUserWithEmailAndPassword(email, password);
 
-      await userRef.user.updateProfile({
-        displayName: name,
-      });
-
       if (userRef) {
-        await firebase.firestore().collection('users')
-          .doc(userRef.user.uid)
-          .set({});
+        userRef.user.updateProfile({
+          displayName: name,
+        });
+
+        dispatch(signInWithEmailAndPassword(email, password));
       }
     } catch (error) {
       throw error;
