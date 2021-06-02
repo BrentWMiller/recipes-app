@@ -27,7 +27,7 @@ function LoginForm(props) {
           label="Email"
           onChangeText={(text) => setEmail(text)}
           autoCompleteType="email"
-          autoFocus={true}
+          autoFocus={false}
           autoCorrect={false}
           returnKeyType="next"
           keyboardType="email-address"
