@@ -7,9 +7,11 @@ import RecipeBlocks from "~components/RecipeBlocks";
 import Greeting from "~components/Greeting";
 import UserAvatar from "~components/UserAvatar";
 import { useSelector } from "react-redux";
+import EditRecipe from "~components/EditRecipe";
 
 const HomeScreen = ({navigation}) => {
   const user = useSelector(state => state.userReducer.user);
+  const recipesModalVisible = useSelector(state => state.recipesReducer.modalIsVisible);
 
   const categories = [
     // {
@@ -134,6 +136,8 @@ const HomeScreen = ({navigation}) => {
         <View style={{marginTop: 40}}>
           <CategoryBlocks categories={ categories } navigation={ navigation } />
         </View>
+
+        <EditRecipe isVisible={ recipesModalVisible }/>
 
         <View style={{marginVertical: 40}}>
           <RecipeBlocks recipes={recipes} navigation={ navigation } />

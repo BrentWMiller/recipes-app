@@ -1,23 +1,21 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { setModalVisibility } from '~store/recipes';
 import APP from '~styles/app';
 import COLORS from '~styles/colors';
 import FONTS from '~styles/fonts';
 import TYPOGRAPHY from '~styles/typography';
-import AppLink from './AppLink';
 import RecipeSkeleton from './RecipeSkeleton';
 
 function NoRecipes(props) {
-  
-  const addRecipe = () => {
-    console.log('add recipe');
-  }
+  const dispatch = useDispatch();
 
   return (
     <View style={[APP.container]}>
       <Text style={[TYPOGRAPHY.body]}>This is where your recently created recipes will appear. Let's get started by adding your first one.</Text>
 
-      <Pressable style={styles.addBlock} onPress={() => addRecipe()}>
+      <Pressable style={styles.addBlock} onPress={() => dispatch(setModalVisibility(true))}>
         <Text style={[TYPOGRAPHY.body, { fontFamily: FONTS.medium500, color: COLORS.white }]}>Add a new recipe</Text>
       </Pressable>
 
