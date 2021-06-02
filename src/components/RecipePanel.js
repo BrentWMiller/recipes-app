@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react/cjs/react.development';
 import { setModalVisibility } from '~store/recipes';
 import TYPOGRAPHY from '~styles/typography';
+import RecipeForm from './RecipeForm';
 
 const screen = Dimensions.get("screen");
 
@@ -22,7 +23,11 @@ function EditRecipe(props) {
       onDismiss={() => dispatch(setModalVisibility(false))}
     >
       <View style={{ padding: 32 }}>
-        <Text style={[TYPOGRAPHY.subheading]}>{ panel.title }</Text>
+        <Text style={[TYPOGRAPHY.heading]}>{ panel.title }</Text>
+
+        <View style={{ marginTop: 40 }}>
+          <RecipeForm />
+        </View>
       </View>
     </DraggablePanel>
   );
