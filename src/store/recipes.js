@@ -2,12 +2,15 @@ import { firebase } from '~utils/firebase';
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
-  modalIsVisible: false
+  panel: {
+    visible: false,
+    title: 'Add recipe'
+  }
 };
 
 export const recipesReducer = createReducer(initialState, {
   [createAction('recipes/SET_MODAL_VISIBILITY')]: (state, action) => {
-    state.modalIsVisible = action.payload;
+    state.panel.visible = action.payload;
   },
 });
 
