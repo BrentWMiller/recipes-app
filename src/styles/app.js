@@ -1,4 +1,6 @@
 import { StyleSheet } from "react-native";
+import COLORS from "./colors";
+import FONTS from "./fonts";
 
 const APP = StyleSheet.create({
   container: {
@@ -7,6 +9,12 @@ const APP = StyleSheet.create({
   containerWider: {
     paddingHorizontal: 16
   },
+  inputLabel: {
+    marginBottom: 8,
+    fontSize: 16,
+    fontFamily: FONTS.semibold600,
+    color: COLORS.gray[800]
+  }
 });
 
 export default APP;

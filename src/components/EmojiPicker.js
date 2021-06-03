@@ -6,6 +6,7 @@ import COLORS from '~styles/colors';
 import FONTS from '~styles/fonts';
 import Plus from "~svgs/plus.svg";
 import Minus from "~svgs/minus.svg";
+import APP from '~styles/app';
 
 function EmojiPicker(props) {
   const { title, string } = props;
@@ -21,7 +22,7 @@ function EmojiPicker(props) {
 
   return (
     <View>
-      <Text style={ styles.label }>{ title }</Text>
+      <Text style={[ APP.inputLabel ]}>{ title }</Text>
       <View style={{ flexDirection: 'row' }}>
         {stringToEmojis.map((emoji, index) => 
           <Pressable
@@ -61,12 +62,6 @@ function EmojiPicker(props) {
 }
 
 const styles = StyleSheet.create({
-  label: {
-    marginBottom: 8,
-    fontSize: 16,
-    fontFamily: FONTS.semibold600,
-    color: COLORS.gray[800]
-  },
   emojiWrapper: {
     alignItems: 'center',
     justifyContent: 'center',

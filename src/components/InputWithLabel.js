@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextInput, View, Text, StyleSheet } from 'react-native';
+import APP from '~styles/app';
 import COLORS from '~styles/colors';
 import FONTS from '~styles/fonts';
 
@@ -10,7 +11,7 @@ function InputWithLabel(props) {
 
   return (
     <View style={[props.style]}>
-      <Text style={styles.label}>{ label }</Text>
+      <Text style={[APP.inputLabel, {display: label ? 'flex' : 'none'}]}>{ label }</Text>
       <TextInput
         style={styles.input}
         keyboardType={props.keyboardType ?? 'default'}
@@ -43,12 +44,6 @@ function InputWithLabel(props) {
 }
 
 const styles = StyleSheet.create({
-  label: {
-    marginBottom: 8,
-    fontSize: 16,
-    fontFamily: FONTS.semibold600,
-    color: COLORS.gray[800]
-  },
   input: {
     height: 50,
     paddingHorizontal: 15,
