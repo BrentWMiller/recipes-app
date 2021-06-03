@@ -25,9 +25,7 @@ function EditRecipe(props) {
       <View style={{ padding: 32 }}>
         <Text style={[TYPOGRAPHY.heading]}>{ panel.title }</Text>
 
-        <View style={{ marginTop: 40 }}>
-          <RecipeForm />
-        </View>
+        <RecipeForm />
       </View>
     </DraggablePanel>
   );
