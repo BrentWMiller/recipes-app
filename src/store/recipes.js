@@ -4,7 +4,7 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 const initialState = {
   panel: {
     visible: false,
-    title: 'Add recipe'
+    title: 'Add a recipe'
   }
 };
 

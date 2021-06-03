@@ -21,7 +21,7 @@ function RecipeForm(props) {
       />
       <EmojiPicker title="Select an emoji" string={ name ? name : '' }/>
 
-      <AppButton title="Save recipe" type="dark" onPress={() => console.log('save')} />
+      <AppButton title="Save recipe" type="dark" style={{ marginTop: 40 }} onPress={() => console.log('save')} />
     </View>
   );
 }
