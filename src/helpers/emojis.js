@@ -480,11 +480,11 @@ const foodEmojis = [
     emoji: '🦂'
   },
   {
-    keywords: ['cold'],
+    keywords: ['cold', 'freezing'],
     emoji: '❄'
   },
   {
-    keywords: ['hot', 'flame', 'fire'],
+    keywords: ['hot', 'flame', 'fire', 'flaming'],
     emoji: '🔥'
   }
 ];
