@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { useState } from 'react/cjs/react.development';
 import AppButton from './AppButton';
 import EmojiPicker from './EmojiPicker';
+import IngredientsInputList from './IngredientsInputList';
 import InputWithLabel from './InputWithLabel';
 import RecipeBlock from './RecipeBlock';
 
@@ -39,6 +40,11 @@ function RecipeForm(props) {
         onChangeText={(text) => setTime(text)}
         autoFocus={false}
         autoCorrect={false}
+      />
+
+      <IngredientsInputList
+        title="Ingredients"
+        updatedIngredients={(ingredients) => setIngredients(ingredients)}
       />
 
       <AppButton title="Save recipe" type="dark" style={{ marginTop: 40 }} onPress={() => console.log('save')} />
