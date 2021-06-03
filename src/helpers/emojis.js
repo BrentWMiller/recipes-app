@@ -164,7 +164,7 @@ const foodEmojis = [
     emoji: '🧆'
   },
   {
-    keywords: ['fish'],
+    keywords: ['fish', 'tuna', 'cod', 'salmon'],
     emoji: '🐟'
   },
   {
