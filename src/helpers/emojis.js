@@ -1,10 +1,10 @@
 const foodEmojis = [
   {
-    keywords: ['burger', 'hamburger'],
+    keywords: ['burger', 'hamburger', 'burgers', 'hamburgers'],
     emoji: '🍔'
   },
   {
-    keywords: ['pizza'],
+    keywords: ['pizza', 'pizzas'],
     emoji: '🍕'
   },
   {
@@ -12,7 +12,7 @@ const foodEmojis = [
     emoji: '🍖'
   },
   {
-    keywords: ['lamb'],
+    keywords: ['lamb', 'lambchop', 'steak', 'filet', 'sirloin', 'porterhouse', 't-bone', 'tbone'],
     emoji: '🥩'
   },
   {
@@ -28,7 +28,7 @@ const foodEmojis = [
     emoji: '🧂'
   },
   {
-    keywords: ['egg', 'fried egg', 'eggs'],
+    keywords: ['egg', 'fried egg', 'eggs', 'fried eggs'],
     emoji: '🍳'
   },
   {
@@ -36,7 +36,7 @@ const foodEmojis = [
     emoji: '🧇'
   },
   {
-    keywords: ['birthday  cake', 'cake'],
+    keywords: ['birthday  cake', 'cake', 'cakes'],
     emoji: '🎂'
   },
   {
@@ -56,11 +56,11 @@ const foodEmojis = [
     emoji: '🥯'
   },
   {
-    keywords: ['cheese'],
+    keywords: ['cheese', 'cheeses'],
     emoji: '🧀'
   },
   {
-    keywords: ['sandwich', 'sandwhiches'],
+    keywords: ['sandwich', 'sandwiches'],
     emoji: '🥪'
   },
   {
@@ -84,7 +84,7 @@ const foodEmojis = [
     emoji: '🥠'
   },
   {
-    keywords: ['oyster'],
+    keywords: ['oyster', 'oysters'],
     emoji: '🦪'
   },
   {
@@ -100,7 +100,7 @@ const foodEmojis = [
     emoji: '🥣'
   },
   {
-    keywords: ['cupcake'],
+    keywords: ['cupcake', 'cupcakes'],
     emoji: '🧁'
   },
   {
@@ -112,7 +112,7 @@ const foodEmojis = [
     emoji: '🥛'
   },
   {
-    keywords: ['tea'],
+    keywords: ['tea', 'teas'],
     emoji: '🍵'
   },
   {
@@ -152,7 +152,7 @@ const foodEmojis = [
     emoji: '🥃'
   },
   {
-    keywords: ['ice'],
+    keywords: ['ice', 'icey'],
     emoji: '🧊'
   },
   {
@@ -180,7 +180,15 @@ const foodEmojis = [
     emoji: '🦈'
   },
   {
-    keywords: ['peanut', 'nut'],
+    keywords: ['crab', 'claw'],
+    emoji: '🦀'
+  },
+  {
+    keywords: ['lobster'],
+    emoji: '🦞'
+  },
+  {
+    keywords: ['peanut', 'nut', 'nutty', 'nuts', 'peanuts'],
     emoji: '🥜'
   },
   {
@@ -212,11 +220,11 @@ const foodEmojis = [
     emoji: '🍝'
   },
   {
-    keywords: ['bread'],
+    keywords: ['bread', 'loaf'],
     emoji: '🍞'
   },
   {
-    keywords: ['fries'],
+    keywords: ['fries', 'fry'],
     emoji: '🍟'
   },
   {
@@ -228,7 +236,7 @@ const foodEmojis = [
     emoji: '🍣'
   },
   {
-    keywords: ['shrimp'],
+    keywords: ['shrimp', 'shrimps'],
     emoji: '🍤'
   },
   {
@@ -240,7 +248,7 @@ const foodEmojis = [
     emoji: '🍪'
   },
   {
-    keywords: ['cake', 'shortcake'],
+    keywords: ['cake', 'shortcake', 'slice'],
     emoji: '🍰'
   },
   {
@@ -252,23 +260,23 @@ const foodEmojis = [
     emoji: '🍦'
   },
   {
-    keywords: ['shaved ice', 'snowcone'],
+    keywords: ['shaved ice', 'snowcone', 'snowcones'],
     emoji: '🍧'
   },
   {
-    keywords: ['chocolate'],
+    keywords: ['chocolate', 'chocolates'],
     emoji: '🍫'
   },
   {
-    keywords: ['candy'],
+    keywords: ['candy', 'candies'],
     emoji: '🍬'
   },
   {
-    keywords: ['lollipop'],
+    keywords: ['lollipop', 'lollipops'],
     emoji: '🍭'
   },
   {
-    keywords: ['custard'],
+    keywords: ['custard', 'custards'],
     emoji: '🍮'
   },
   {
@@ -276,7 +284,7 @@ const foodEmojis = [
     emoji: '🍡'
   },
   {
-    keywords: ['pie'],
+    keywords: ['pie', 'pies'],
     emoji: '🥧'
   },
   {
@@ -348,11 +356,11 @@ const foodEmojis = [
     emoji: '🍐'
   },
   {
-    keywords: ['corn'],
+    keywords: ['corn', 'cob'],
     emoji: '🌽'
   },
   {
-    keywords: ['pepper', 'jalapeno', 'spicy', 'hot', 'peppers'],
+    keywords: ['pepper', 'jalapeno', 'jalapenos', 'spicy', 'hot', 'peppers'],
     emoji: '🌶'
   },
   {
@@ -368,7 +376,7 @@ const foodEmojis = [
     emoji: '🍲'
   },
   {
-    keywords: ['croissant', 'crescent roll'],
+    keywords: ['croissant', 'crescent roll', 'croissants'],
     emoji: '🥐'
   },
   {
@@ -392,11 +400,11 @@ const foodEmojis = [
     emoji: '🧅'
   },
   {
-    keywords: ['chesnut', 'nut'],
+    keywords: ['chesnut', 'nut', 'chesnuts'],
     emoji: '🌰'
   },
   {
-    keywords: ['cactus'],
+    keywords: ['cactus', 'cacti'],
     emoji: '🌵'
   },
   {
@@ -424,7 +432,7 @@ const foodEmojis = [
     emoji: '🥖'
   },
   {
-    keywords: ['salad'],
+    keywords: ['salad', 'ceasar', 'iceberg', 'caprese', 'cobb', 'fattoush'],
     emoji: '🥗'
   },
   {
@@ -439,11 +447,51 @@ const foodEmojis = [
     keywords: ['coffee'],
     emoji: '☕'
   },
+  {
+    keywords: ['juice'],
+    emoji: '🧃'
+  },
+  {
+    keywords: ['sunflower', 'sunflowers'],
+    emoji: '🌻'
+  },
+  {
+    keywords: ['squid', 'squids'],
+    emoji: '🦑'
+  },
+  {
+    keywords: ['octopus', 'octopi'],
+    emoji: '🐙'
+  },
+  {
+    keywords: ['duck', 'ducks'],
+    emoji: '🦆'
+  },
+  {
+    keywords: ['turkey', 'turkeys'],
+    emoji: '🦃'
+  },
+  {
+    keywords: ['cricket', 'crickets'],
+    emoji: '🦗'
+  },
+  {
+    keywords: ['scoprion', 'scoprions'],
+    emoji: '🦂'
+  },
+  {
+    keywords: ['cold'],
+    emoji: '❄'
+  },
+  {
+    keywords: ['hot', 'flame', 'fire'],
+    emoji: '🔥'
+  }
 ];
 
 const convertToEmojis = (string, amountToReturn) => {
   let words = string.toLowerCase().trim().replace(/ /g,"|");
-  const regex = new RegExp(`(?:${words})`);
+  const regex = new RegExp(`\\b(?:${words})\\b`);
 
   let emojis = [];
 
