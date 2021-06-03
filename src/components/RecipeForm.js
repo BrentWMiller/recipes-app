@@ -35,6 +35,7 @@ function RecipeForm(props) {
       <InputWithLabel
         style={{marginBottom: 8}}
         label="Time (minutes)"
+        keyboardType="number-pad"
         onChangeText={(text) => setTime(text)}
         autoFocus={false}
         autoCorrect={false}
