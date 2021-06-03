@@ -510,4 +510,4 @@ const convertToEmojis = (string, amountToReturn) => {
   }
 }
 
-export { convertToEmojis };
+export { foodEmojis, convertToEmojis };
