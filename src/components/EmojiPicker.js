@@ -13,15 +13,21 @@ function EmojiPicker(props) {
   const [showFullPicker, setShowFullPicker] = useState(false);
   const stringToEmojis = convertToEmojis(string, 4);
 
+  const emojiSelected = (emoji) => {
+    const value = selected === emoji ? null : emoji;
+    setSelected(value);
+    props.pickedEmoji(value);
+  };
+
   return (
     <View>
-      <Text style={ styles.label }>{ title } { selected }</Text>
+      <Text style={ styles.label }>{ title }</Text>
       <View style={{ flexDirection: 'row' }}>
         {stringToEmojis.map((emoji, index) => 
           <Pressable
             key={ index }
             style={[ styles.emojiWrapper, { backgroundColor: selected === emoji ? COLORS.gray[100] : COLORS.white }]}
-            onPress={() => setSelected(emoji)}
+            onPress={() => emojiSelected(emoji)}
           >
             <Text style={{ fontSize: 35 }}>{ emoji }</Text>
           </Pressable>
@@ -42,7 +48,7 @@ function EmojiPicker(props) {
               <Pressable
                 key={ index }
                 style={[ styles.emojiWrapperSmall, { backgroundColor: selected === emoji.emoji ? COLORS.gray[300] : COLORS.white }]}
-                onPress={() => setSelected(emoji.emoji)}
+                onPress={() => emojiSelected(emoji.emoji)}
               >
                 <Text style={{ fontSize: 20 }}>{ emoji.emoji }</Text>
               </Pressable>
