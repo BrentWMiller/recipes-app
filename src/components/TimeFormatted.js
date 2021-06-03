@@ -20,6 +20,10 @@ function TimeFormatted(props) {
   if (minutes > 0) {
     timeString += `${minutes} min${minutes > 1 ? 's' : ''}`;
   }
+
+  if (timeString === '') {
+    timeString = 'No time'
+  }
   
   return (
     <View>
