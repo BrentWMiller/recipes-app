@@ -24,9 +24,21 @@ function RecipeForm(props) {
         onChangeText={(text) => setName(text)}
         autoFocus={false}
         autoCorrect={true}
-        returnKeyType="next"
       />
-      <EmojiPicker title="Select an emoji" string={ name ? name : '' } pickedEmoji={(emoji) => setEmoji(emoji)}/>
+      <View style={{marginBottom: 24}}>
+        <EmojiPicker
+          title="Select an emoji"
+          string={ name ? name : '' }
+          pickedEmoji={(emoji) => setEmoji(emoji)}
+        />
+      </View>
+      <InputWithLabel
+        style={{marginBottom: 8}}
+        label="Time (minutes)"
+        onChangeText={(text) => setTime(text)}
+        autoFocus={false}
+        autoCorrect={false}
+      />
 
       <AppButton title="Save recipe" type="dark" style={{ marginTop: 40 }} onPress={() => console.log('save')} />
     </View>
