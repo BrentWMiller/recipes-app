@@ -5,6 +5,7 @@ import { convertToEmojis, foodEmojis } from '~helpers/emojis';
 import COLORS from '~styles/colors';
 import FONTS from '~styles/fonts';
 import Plus from "~svgs/plus.svg";
+import Minus from "~svgs/minus.svg";
 
 function EmojiPicker(props) {
   const { title, string } = props;
@@ -29,7 +30,8 @@ function EmojiPicker(props) {
           style={[ styles.emojiWrapper]}
           onPress={() => setShowFullPicker(!showFullPicker)}
         >
-          <Plus width="20" height="20" color={COLORS.black}/>
+          <Plus width="20" height="20" color={COLORS.black} style={{display: showFullPicker ? 'none': 'full'}}/>
+          <Minus width="20" height="3" color={COLORS.black} style={{display: showFullPicker ? 'full': 'none'}}/>
         </Pressable>
       </View>
 
@@ -73,9 +75,9 @@ const styles = StyleSheet.create({
   emojiWrapperSmall: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 42,
-    height: 42,
-    margin: 2.25,
+    width: 40,
+    height: 40,
+    margin: 3,
     borderWidth: 1,
     borderRadius: 5,
     borderColor: COLORS.gray[100],
@@ -89,6 +91,8 @@ const styles = StyleSheet.create({
   pickerContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    justifyContent: 'center',
+    paddingVertical: 3,
     backgroundColor: COLORS.gray[100]
   }
 })
