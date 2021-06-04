@@ -23,7 +23,7 @@ function EditRecipe(props) {
       onDismiss={() => dispatch(setModalVisibility(false))}
     >
       <ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: 'flex-start'}}>
-        <KeyboardAvoidingView behavior="padding">
+        <KeyboardAvoidingView behavior="position">
           <View style={{ padding: 32 }}>
             <Text style={[TYPOGRAPHY.heading]}>{ panel.title }</Text>
 

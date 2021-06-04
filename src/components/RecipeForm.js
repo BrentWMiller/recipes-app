@@ -33,6 +33,7 @@ function RecipeForm(props) {
         autoFocus={false}
         autoCorrect={true}
       />
+      
       <View style={{marginBottom: 24}}>
         <EmojiPicker
           title="Select an emoji"
@@ -40,6 +41,7 @@ function RecipeForm(props) {
           pickedEmoji={(emoji) => setEmoji(emoji)}
         />
       </View>
+
       <InputWithLabel
         style={{marginBottom: 8}}
         label="Time (minutes)"
@@ -53,7 +55,6 @@ function RecipeForm(props) {
         title="Ingredients"
         updatedIngredients={(ingredients) => setIngredients(ingredients)}
       />
-
       <AppButton title="Save recipe" type="dark" style={{ marginTop: 40 }} onPress={() => console.log('save')} />
     </View>
   );
