@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, Dimensions, KeyboardAvoidingView } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import DraggablePanel from 'react-native-draggable-panel';
-import { ScrollView } from 'react-native-gesture-handler';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useDispatch } from 'react-redux';
 import { setModalVisibility } from '~store/recipes';
 import TYPOGRAPHY from '~styles/typography';
@@ -22,15 +22,13 @@ function EditRecipe(props) {
       expandable={ true }
       onDismiss={() => dispatch(setModalVisibility(false))}
     >
-      <ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: 'flex-start'}}>
-        <KeyboardAvoidingView behavior="position">
-          <View style={{ padding: 32 }}>
-            <Text style={[TYPOGRAPHY.heading]}>{ panel.title }</Text>
+      <KeyboardAwareScrollView extraHeight={ 40 }>
+        <View style={{ padding: 32 }}>
+          <Text style={[TYPOGRAPHY.heading]}>{ panel.title }</Text>
 
-            <RecipeForm />
-          </View>
-        </KeyboardAvoidingView>
-      </ScrollView>
+          <RecipeForm />
+        </View>
+      </KeyboardAwareScrollView>
     </DraggablePanel>
   );
 }

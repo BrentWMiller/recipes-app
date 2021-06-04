@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { useState } from 'react/cjs/react.development';
 import APP from '~styles/app';
+import InputWithLabel from './InputWithLabel';
 
 function IngredientsInputList(props) {
   const { title } = props;
@@ -39,7 +40,8 @@ const IngredientInput = (props) => {
   const { ingredient } = props;
 
   return (
-    <Text>{ ingredient.text }</Text>
+    <InputWithLabel
+    />
   )
 }
 
