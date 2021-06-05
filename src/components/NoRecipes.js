@@ -1,7 +1,5 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { setModalVisibility } from '~store/recipes';
 import APP from '~styles/app';
 import COLORS from '~styles/colors';
 import FONTS from '~styles/fonts';
@@ -9,7 +7,6 @@ import TYPOGRAPHY from '~styles/typography';
 import RecipeSkeleton from './RecipeSkeleton';
 
 function NoRecipes(props) {
-  const dispatch = useDispatch();
   const { navigation } = props;
 
   return (
