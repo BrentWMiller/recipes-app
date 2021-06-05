@@ -7,33 +7,66 @@ const initialState = {
     name: '',
     email: ''
   },
+  creating: false
 };
 
 export const userReducer = createReducer(initialState, {
   [createAction('user/SET_USER')]: (state, action) => {
     state.user = action.payload;
   },
+  [createAction('user/SET_CREATING')]: (state, action) => {
+    state.creating = action.payload;
+  },
 });
+
+export const userUid = () => {
+  return state.user.uid;
+}
 
 export const createUserWithEmailAndPassword = (email, password, name) => {
   return async (dispatch) => {
     try {
+      dispatch({ type: 'user/SET_CREATING', payload: true });
+
       const userRef = await firebase
         .auth()
         .createUserWithEmailAndPassword(email, password);
 
       if (userRef) {
-        userRef.user.updateProfile({
-          displayName: name,
-        });
+        try {
+          userRef.user.updateProfile({
+            displayName: name,
+          });
+          await firebase.firestore().collection('users').doc(userRef.user.uid).set({
+            created: new Date()
+          });
+
+          dispatch({ type: 'user/SET_CREATING', payload: false });
+        } catch (error) {
+          dispatch({ type: 'user/SET_CREATING', payload: false });
+          throw error;
+        }
 
         dispatch(signInWithEmailAndPassword(email, password));
       }
     } catch (error) {
+      dispatch({ type: 'user/SET_CREATING', payload: false });
       throw error;
     }
   };
 };
+
+export const createUserDoc = (uid) => {
+  return async (dispatch) => {
+    try {
+      firebase.firestore().collection('users').doc(uid).set({
+        uid
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
 
 export const signInWithEmailAndPassword = (email, password) => {
   return async (dispatch) => {

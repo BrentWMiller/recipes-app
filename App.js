@@ -5,10 +5,12 @@ import { Inter_500Medium, Inter_600SemiBold, Inter_700Bold, Inter_400Regular} fr
 import * as Font from 'expo-font';
 import LoggedIn from '~navigation/LoggedIn';
 import LoggedOut from '~navigation/LoggedOut';
-import { Provider, useDispatch } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
 import store from '~store/store';
 
 const AppInner = () => {
+  const creating = useSelector(state => state.userReducer.creating);
+
   const dispatch = useDispatch();
   const [isAuthenticationReady, setAuthenticationReady] = useState(false);
   const [isAuthenticated, setAuthenticated] = useState(false);
@@ -51,7 +53,7 @@ const AppInner = () => {
     );
   }
   
-  if (!fontsLoading && (isAuthenticationReady && isAuthenticated)) {
+  if (!fontsLoading && (isAuthenticationReady && isAuthenticated) && !creating) {
     return (
       <LoggedIn />
     )
