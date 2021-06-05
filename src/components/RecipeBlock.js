@@ -7,6 +7,7 @@ import TimeFormatted from './TimeFormatted';
 
 function RecipeBlock(props) {
   const { recipe, first } = props;
+  const ingredientsCount = recipe.ingredients.length;
 
   const styles = StyleSheet.create({
     wrapper: {
@@ -45,7 +46,7 @@ function RecipeBlock(props) {
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <TimeFormatted time={recipe.time} style={[{fontSize: 14, color: COLORS.gray[500]}]} />
-          <Text style={[{fontSize: 14, color: COLORS.gray[500]}]}>{ recipe.ingredients } ingredient{recipe.ingredients !== 1 && 's'}</Text>
+          <Text style={[{fontSize: 14, color: COLORS.gray[500]}]}>{ ingredientsCount } ingredient{ingredientsCount !== 1 && 's'}</Text>
         </View>
       </View>
     </View>
