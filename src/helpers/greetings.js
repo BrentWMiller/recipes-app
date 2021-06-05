@@ -2,62 +2,83 @@ const timeGreetings = [
   {
     start: 200,
     end: 500,
-    message: 'You\'re an early bird 🐥'
+    message: '🐥 You\'re an early bird.'
   },
   {
     start: 501,
     end: 1059,
-    message: 'Good morning 🥞',
+    message: '🥞 Good morning.',
   },
   {
     start: 501,
     end: 1059,
-    message: 'What\'s for breakfast? 🥓',
+    message: '🥚 Have an egg-cellent day!',
+  },
+  {
+    start: 501,
+    end: 1059,
+    message: '🥓 What\'s for breakfast?',
   },
   {
     start: 1100,
     end: 1259,
-    message: 'Afternoon 🍕'
+    message: '🍕 Afternoon.'
   },
   {
     start: 1100,
     end: 1259,
-    message: 'What\'s for lunch? 🥗'
+    message: '🥗 What\'s for lunch?'
   },
   {
     start: 1300,
     end: 1559,
-    message: 'Need a snack? 🍪'
+    message: '🍪 Need a snack?'
   },
   {
     start: 1300,
     end: 1559,
-    message: 'Healthy snack? 🍎'
+    message: '🍎 Healthy snack?'
   },
   {
     start: 1600,
     end: 2400,
-    message: 'Good evening 🍝'
+    message: '🍝 Good evening.'
   },
   {
     start: 1600,
     end: 2400,
-    message: 'What\'s for dinner? 🍲'
+    message: '🍲 What\'s for dinner?'
   },
   {
     start: 0,
     end: 159,
-    message: 'Midnight snack? 😋'
+    message: '😋 Late night snack?'
   },
   {
     start: 0,
     end: 2400,
-    message: 'What are we eating? 🍽'
+    message: '🍽 What are we eating?'
   },
   {
     start: 0,
     end: 2400,
-    message: 'Hey there! 👋'
+    message: '👋 Hey there!'
+  },
+  {
+    start: 0,
+    end: 2400,
+    day: 5,
+    message: '🍟 It’s fry-day!'
+  },
+  {
+    start: 700,
+    end: 1200,
+    message: '🍩 Donut ever leave.'
+  },
+  {
+    start: 1400,
+    end: 2400,
+    message: '🍻 You are brew-tiful'
   }
 ]
 
@@ -68,6 +89,7 @@ const padMinutes = (num, size) => {
 export const getTimebasedGreeting = () => {
   // Get the time of day
   const today = new Date();
+  const dayOfWeek = today.getDay();
   const hour = today.getHours();
   const minute = today.getMinutes();
   const timeString = `${hour}${padMinutes(minute, 2)}`;
@@ -75,8 +97,13 @@ export const getTimebasedGreeting = () => {
 
   // Look for an appropriate greeting
   let greetings = timeGreetings.filter(greeting => {
-    if (time >= greeting.start && time <= greeting.end) {
-      return greeting
+    if ((time >= greeting.start && time <= greeting.end)) {
+
+      if (greeting.day && greeting.day === dayOfWeek) {
+        return greeting;
+      } else {
+        return greeting;
+      }
     }
   });
 
