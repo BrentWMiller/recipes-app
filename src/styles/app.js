@@ -14,6 +14,14 @@ const APP = StyleSheet.create({
     fontSize: 16,
     fontFamily: FONTS.semibold600,
     color: COLORS.gray[800]
+  },
+  input: {
+    height: 50,
+    paddingHorizontal: 15,
+    fontSize: 16,
+    borderRadius: 5,
+    fontFamily: FONTS.medium500,
+    backgroundColor: COLORS.gray[100],
   }
 });
 

@@ -13,7 +13,7 @@ function InputWithLabel(props) {
     <View style={[props.style]}>
       <Text style={[APP.inputLabel, {display: label ? 'flex' : 'none'}]}>{ label }</Text>
       <TextInput
-        style={styles.input}
+        style={APP.input}
         keyboardType={props.keyboardType ?? 'default'}
         contextMenuHidden={props.contextMenuHidden ?? false}
         blurOnSubmit={props.disableReturn !== true}
@@ -44,14 +44,6 @@ function InputWithLabel(props) {
 }
 
 const styles = StyleSheet.create({
-  input: {
-    height: 50,
-    paddingHorizontal: 15,
-    fontSize: 16,
-    borderRadius: 5,
-    fontFamily: FONTS.medium500,
-    backgroundColor: COLORS.gray[100],
-  },
   description: {
     fontSize: 14,
     color: COLORS.gray[500]
