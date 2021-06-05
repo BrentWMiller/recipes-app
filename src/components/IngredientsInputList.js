@@ -43,6 +43,7 @@ function IngredientsInputList(props) {
             ingredient={ ingredient }
             remove={(id) => removeIngredient(id)}
             add={() => addIngredient()}
+            updateAllIngredients={() => updateIngredients(ingredients)}
           />
         )
       })}
@@ -61,6 +62,20 @@ const IngredientInput = (props) => {
   const [quantity, setQuantity] = useState(ingredient.quantity);
   const [name, setName] = useState(ingredient.name);
 
+  const saveIngredient = (text, type) => {
+    if (type === 'quantity') {
+      setQuantity(text);
+      ingredient.quantity = text;
+    }
+
+    if (type === 'name') {
+      setName(text);
+      ingredient.name = text;
+    }
+
+    props.updateAllIngredients();
+  };
+
   return (
     <View style={{position: 'relative', flexDirection: 'row', marginBottom: 8}}>
       <TextInput
@@ -70,7 +85,7 @@ const IngredientInput = (props) => {
         blurOnSubmit={false}
         returnKeyType="next"
         autoCapitalize="none"
-        onChangeText={(text) => setQuantity(text)}
+        onChangeText={(text) => saveIngredient(text, 'quantity')}
         onSubmitEditing={() => nameRef.current.focus()}
       />
       <TextInput
@@ -79,7 +94,7 @@ const IngredientInput = (props) => {
         placeholder="Label"
         style={[APP.input, styles.input, styles.name]}
         autoCapitalize="none"
-        onChangeText={(text) => setName(text)}
+        onChangeText={(text) => saveIngredient(text, 'name')}
         onSubmitEditing={() => props.add()}
       />
 
