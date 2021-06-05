@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 
 const HomeScreen = ({navigation}) => {
   const user = useSelector(state => state.userReducer.user);
-  const recipesPanel = useSelector(state => state.recipesReducer.panel);
 
   const categories = [
     // {
