@@ -11,6 +11,7 @@ function RecipeForm(props) {
   const [name, setName] = useState('');
   const [emoji, setEmoji] = useState([]);
   const [time, setTime] = useState(0);
+  const [servings, setServings] = useState(1);
   const [ingredients, setIngredients] = useState([]);
 
   return (
@@ -31,14 +32,25 @@ function RecipeForm(props) {
         />
       </View>
 
-      <InputWithLabel
-        style={{marginBottom: 8}}
-        label="Time (minutes)"
-        keyboardType="number-pad"
-        onChangeText={(text) => setTime(text)}
-        autoFocus={false}
-        autoCorrect={false}
-      />
+      <View style={{flexDirection: 'row', marginBottom: 8}}>
+        <InputWithLabel
+          style={{width: '50%', marginRight: 4}}
+          label="Time (minutes)"
+          keyboardType="number-pad"
+          onChangeText={(text) => setTime(text)}
+          autoFocus={false}
+          autoCorrect={false}
+        />
+
+        <InputWithLabel
+          style={{width: '50%', marginLeft: 4}}
+          label="Servings"
+          keyboardType="number-pad"
+          onChangeText={(text) => setServings(text)}
+          autoFocus={false}
+          autoCorrect={false}
+        />
+      </View>
 
       <IngredientsInputList
         title="Ingredients"
