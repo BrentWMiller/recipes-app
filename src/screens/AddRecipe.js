@@ -4,7 +4,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import RecipeForm from '~components/RecipeForm';
 import APP from '~styles/app';
 
-function EditRecipeScreen(props) {
+function AddRecipeScreen(props) {
   const { navigation } = props;
 
   return (
@@ -16,4 +16,4 @@ function EditRecipeScreen(props) {
   );
 }
 
-export default EditRecipeScreen;
+export default AddRecipeScreen;
