@@ -1,6 +1,6 @@
 const foodEmojis = [
   {
-    keywords: ['burger', 'hamburger', 'burgers', 'hamburgers'],
+    keywords: ['burger', 'hamburger', 'burgers', 'hamburgers', 'slider', 'sliders'],
     emoji: '🍔'
   },
   {
