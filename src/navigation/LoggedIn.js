@@ -6,6 +6,7 @@ import TestScreen from '~screens/Test';
 import ProfileScreen from "~screens/Profile";
 import CategoriesScreen from "~screens/Categories";
 import RecipesScreen from "~screens/Recipes";
+import EditRecipeScreen from "~screens/EditRecipe";
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ const LoggedIn = () => {
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Categories" component={CategoriesScreen} />
         <Stack.Screen name="Recipes" component={RecipesScreen} />
+        <Stack.Screen name="Edit Recipe" component={EditRecipeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

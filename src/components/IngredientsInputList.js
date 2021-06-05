@@ -1,10 +1,9 @@
-import React, { useCallback, useState } from 'react';
-import { View, Text, Button, Pressable, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Button, Pressable, StyleSheet } from 'react-native';
 import APP from '~styles/app';
 import InputWithLabel from './InputWithLabel';
 import Minus from "~svgs/minus.svg";
 import COLORS from '~styles/colors';
-import DraggableFlatList from 'react-native-draggable-flatlist';
 
 function IngredientsInputList(props) {
   const { title } = props;
@@ -12,9 +11,6 @@ function IngredientsInputList(props) {
     id: new Date().getTime(),
     text: ''
   }]);
-
-  // TODO Add/remove inputs dynamically
-  // https://stackoverflow.com/questions/62974370/react-native-add-remove-input-field-on-click-of-a-button
 
   const updateIngredients = (ingredients) => {
     props.updatedIngredients(ingredients);
@@ -34,32 +30,11 @@ function IngredientsInputList(props) {
     updateIngredients(filteredIngredients);
   }
 
-  const renderItem = useCallback(
-    ({ item, index, drag, isActive }) => {
-      return (
-        <TouchableOpacity
-          onLongPress={drag}
-        >
-          <Text>
-            Test {index}
-          </Text>
-        </TouchableOpacity>
-      );
-    },
-    []
-  );
-
   return (
     <View>
       <Text style={[APP.inputLabel]}>{ title }</Text>
 
-      <DraggableFlatList
-        data={ ingredients }
-        renderItem={ renderItem }
-        keyExtractor={(item, index) => `draggable-item-${item.id}`}
-      />
-
-      {/* {ingredients.map((ingredient, index) => {
+      {ingredients.map((ingredient, index) => {
        return (
          <View key={ingredient.id} style={{flexDirection: 'row'}}>
           <InputWithLabel
@@ -74,7 +49,7 @@ function IngredientsInputList(props) {
           </Pressable>
         </View>
        );
-      })} */}
+      })}
 
       <Button
         title="+ Add ingredient"

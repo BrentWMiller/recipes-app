@@ -10,12 +10,13 @@ import RecipeSkeleton from './RecipeSkeleton';
 
 function NoRecipes(props) {
   const dispatch = useDispatch();
+  const { navigation } = props;
 
   return (
     <View style={[APP.container]}>
       <Text style={[TYPOGRAPHY.body]}>This is where your recently created recipes will appear. Let's get started by adding your first one.</Text>
 
-      <Pressable style={styles.addBlock} onPress={() => dispatch(setModalVisibility(true))}>
+      <Pressable style={styles.addBlock} onPress={() => navigation.navigate('Edit Recipe')}>
         <Text style={[TYPOGRAPHY.body, { fontFamily: FONTS.medium500, color: COLORS.white }]}>Add a new recipe</Text>
       </Pressable>
 

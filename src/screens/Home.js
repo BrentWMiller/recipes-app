@@ -7,7 +7,6 @@ import RecipeBlocks from "~components/RecipeBlocks";
 import Greeting from "~components/Greeting";
 import UserAvatar from "~components/UserAvatar";
 import { useSelector } from "react-redux";
-import RecipePanel from "~components/RecipePanel";
 
 const HomeScreen = ({navigation}) => {
   const user = useSelector(state => state.userReducer.user);
@@ -136,8 +135,6 @@ const HomeScreen = ({navigation}) => {
         <View style={{marginTop: 40}}>
           <CategoryBlocks categories={ categories } navigation={ navigation } />
         </View>
-
-        <RecipePanel panel={ recipesPanel }/>
 
         <View style={{marginVertical: 40}}>
           <RecipeBlocks recipes={recipes} navigation={ navigation } />

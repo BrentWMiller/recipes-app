@@ -24,7 +24,7 @@ const RecipeBlocks = (props) => {
                   <RecipeBlock key={recipe.id} recipe={ recipe } first={index === 0}/>
                 ))}
               </View>
-            : <NoRecipes />
+            : <NoRecipes navigation={ navigation } />
         }
       </View>
     </View>
