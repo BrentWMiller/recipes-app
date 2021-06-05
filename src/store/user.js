@@ -19,10 +19,6 @@ export const userReducer = createReducer(initialState, {
   },
 });
 
-export const userUid = () => {
-  return state.user.uid;
-}
-
 export const createUserWithEmailAndPassword = (email, password, name) => {
   return async (dispatch) => {
     try {
@@ -57,7 +53,7 @@ export const createUserWithEmailAndPassword = (email, password, name) => {
 };
 
 export const createUserDoc = (uid) => {
-  return async (dispatch) => {
+  return async () => {
     try {
       firebase.firestore().collection('users').doc(uid).set({
         uid
