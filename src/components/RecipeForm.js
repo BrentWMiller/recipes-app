@@ -15,17 +15,6 @@ function RecipeForm(props) {
 
   return (
     <View>
-      <View style={{ marginBottom: 20 }}>
-        <RecipeBlock
-          recipe={{
-            name,
-            time,
-            ingredients: ingredients.length + 1,
-            emoji
-          }}
-        />
-      </View>
-
       <InputWithLabel
         style={{marginBottom: 8}}
         label="Name"
