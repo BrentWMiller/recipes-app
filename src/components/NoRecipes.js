@@ -13,14 +13,18 @@ function NoRecipes(props) {
   const { navigation } = props;
 
   return (
-    <View style={[APP.container]}>
-      <Text style={[TYPOGRAPHY.body]}>This is where your recently created recipes will appear. Let's get started by adding your first one.</Text>
+    <View>
+      <View style={[APP.container]}>
+        <Text style={[TYPOGRAPHY.body]}>This is where your recently created recipes will appear. Let's get started by adding your first one.</Text>
+      </View>
 
-      <Pressable style={styles.addBlock} onPress={() => navigation.navigate('Edit Recipe')}>
-        <Text style={[TYPOGRAPHY.body, { fontFamily: FONTS.medium500, color: COLORS.white }]}>Add a new recipe</Text>
-      </Pressable>
+      <View style={[APP.containerWider]}>
+        <Pressable style={styles.addBlock} onPress={() => navigation.navigate('Add Recipe')}>
+          <Text style={[TYPOGRAPHY.body, { fontFamily: FONTS.medium500, color: COLORS.white }]}>Add a new recipe</Text>
+        </Pressable>
 
-      {[...Array(3).keys()].map(i => <RecipeSkeleton key={i}/>)}
+        {[...Array(3).keys()].map(i => <RecipeSkeleton key={i}/>)}
+      </View>
     </View>
   );
 }
