@@ -20,6 +20,10 @@ const foodEmojis = [
     emoji: '🍗'
   },
   {
+    keywords: ['chicken'],
+    emoji: '🐔'
+  },
+  {
     keywords: ['hotdog', 'hot dog', 'hotdogs'],
     emoji: '🌭'
   },
@@ -56,7 +60,7 @@ const foodEmojis = [
     emoji: '🥯'
   },
   {
-    keywords: ['cheese', 'cheeses'],
+    keywords: ['cheese', 'cheeses', 'cheddar', 'mozzarella'],
     emoji: '🧀'
   },
   {
@@ -268,7 +272,7 @@ const foodEmojis = [
     emoji: '🍫'
   },
   {
-    keywords: ['candy', 'candies'],
+    keywords: ['candy', 'candies', 'sugar'],
     emoji: '🍬'
   },
   {
@@ -412,6 +416,10 @@ const foodEmojis = [
     emoji: '🌿'
   },
   {
+    keywords: ['maple', 'syrup'],
+    emoji: '🍁'
+  },
+  {
     keywords: ['cucumber', 'cucumbers', 'pickle', 'pickles'],
     emoji: '🥒'
   },
@@ -486,7 +494,23 @@ const foodEmojis = [
   {
     keywords: ['hot', 'flame', 'fire', 'flaming'],
     emoji: '🔥'
-  }
+  },
+  {
+    keywords: ['wheat', 'flour'],
+    emoji: '🌾'
+  },
+  {
+    keywords: ['vanilla'],
+    emoji: '🌼'
+  },
+  {
+    keywords: ['tspn', 'tbspn', 'tablespoon', 'teaspoon'],
+    emoji: '🥄'
+  },
+  {
+    keywords: ['bento box'],
+    emoji: '🍱'
+  },
 ];
 
 const convertToEmojis = (string, amountToReturn) => {
