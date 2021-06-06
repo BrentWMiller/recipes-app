@@ -9,8 +9,7 @@ function IngredientsInputList(props) {
   const { title } = props;
   const [ingredients, setIngredients] = useState([{
     id: new Date().getTime(),
-    quantity: '',
-    name: '',
+    value: '',
   }]);
 
   const updateIngredients = (ingredients) => {
@@ -20,8 +19,7 @@ function IngredientsInputList(props) {
   const addIngredient = () => {
     setIngredients([...ingredients, {
       id: new Date().getTime(),
-      quantity: '',
-      name: '',
+      value: '',
     }]);
     updateIngredients(ingredients);
   };
@@ -58,20 +56,11 @@ function IngredientsInputList(props) {
 
 const IngredientInput = (props) => {
   const { ingredient } = props;
-  const nameRef = useRef();
-  const [quantity, setQuantity] = useState(ingredient.quantity);
-  const [name, setName] = useState(ingredient.name);
+  const [value, setValue] = useState(ingredient.value);
 
   const saveIngredient = (text, type) => {
-    if (type === 'quantity') {
-      setQuantity(text);
-      ingredient.quantity = text;
-    }
-
-    if (type === 'name') {
-      setName(text);
-      ingredient.name = text;
-    }
+    setValue(text);
+    ingredient.value = text;
 
     props.updateAllIngredients();
   };
@@ -79,22 +68,11 @@ const IngredientInput = (props) => {
   return (
     <View style={{position: 'relative', flexDirection: 'row', marginBottom: 8}}>
       <TextInput
-        value={ quantity }
-        placeholder="Quantity"
-        style={[APP.input, styles.input, styles.qty, { marginRight: 8}]}
-        blurOnSubmit={false}
-        returnKeyType="next"
+        value={ value }
+        placeholder="1 cup of sugar"
+        style={[APP.input, styles.input, styles.value]}
         autoCapitalize="none"
-        onChangeText={(text) => saveIngredient(text, 'quantity')}
-        onSubmitEditing={() => nameRef.current.focus()}
-      />
-      <TextInput
-        ref={nameRef}
-        value={ name }
-        placeholder="Label"
-        style={[APP.input, styles.input, styles.name]}
-        autoCapitalize="none"
-        onChangeText={(text) => saveIngredient(text, 'name')}
+        onChangeText={(text) => saveIngredient(text, 'value')}
         onSubmitEditing={() => props.add()}
       />
 
@@ -111,10 +89,6 @@ const IngredientInput = (props) => {
 const styles = StyleSheet.create({
   input: {
     flexGrow: 1,
-  },
-  qty: {
-    width: 115,
-    flexGrow: 0
   },
   inputButton: {
     position: 'absolute',
