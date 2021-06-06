@@ -45,7 +45,7 @@ function RecipeBlock(props) {
         </Text>
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <TimeFormatted time={recipe.time} style={[{fontSize: 14, color: COLORS.gray[500]}]} />
+          <Text style={[{fontSize: 14, color: COLORS.gray[500]}]}>{ recipe.time }</Text>
           <Text style={[{fontSize: 14, color: COLORS.gray[500]}]}>{ ingredientsCount } ingredient{ingredientsCount !== 1 && 's'}</Text>
         </View>
       </View>

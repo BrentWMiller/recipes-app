@@ -40,6 +40,7 @@ function RecipeForm(props) {
       <InputWithLabel
         style={{marginBottom: 8}}
         label="Name"
+        placeholder="Give your recipe a name"
         onChangeText={(text) => setName(text)}
         autoFocus={false}
         autoCorrect={true}
@@ -56,8 +57,8 @@ function RecipeForm(props) {
       <View style={{flexDirection: 'row', marginBottom: 8}}>
         <InputWithLabel
           style={{width: '50%', marginRight: 4}}
-          label="Time (minutes)"
-          keyboardType="number-pad"
+          label="Time"
+          placeholder="1hr 15mins"
           onChangeText={(text) => setTime(text)}
           autoFocus={false}
           autoCorrect={false}
@@ -66,7 +67,7 @@ function RecipeForm(props) {
         <InputWithLabel
           style={{width: '50%', marginLeft: 4}}
           label="Servings"
-          keyboardType="number-pad"
+          placeholder="2-4"
           onChangeText={(text) => setServings(text)}
           autoFocus={false}
           autoCorrect={false}
