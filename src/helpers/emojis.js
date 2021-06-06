@@ -60,7 +60,7 @@ const foodEmojis = [
     emoji: '🥯'
   },
   {
-    keywords: ['cheese', 'cheeses', 'cheddar', 'mozzarella'],
+    keywords: ['cheese', 'cheeses', 'cheddar', 'mozzarella', 'queso'],
     emoji: '🧀'
   },
   {
