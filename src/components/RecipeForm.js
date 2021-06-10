@@ -13,7 +13,7 @@ function RecipeForm(props) {
 
   const { navigation } = props;
 
-  const [name, setName] = useState('');
+  const [title, setTitle] = useState('');
   const [emoji, setEmoji] = useState('');
   const [time, setTime] = useState(0);
   const [servings, setServings] = useState(1);
@@ -22,7 +22,8 @@ function RecipeForm(props) {
   const submit = async () => {
     try {
       await dispatch(saveRecipe({
-        name,
+        title,
+        description,
         emoji,
         time,
         servings,
@@ -39,17 +40,29 @@ function RecipeForm(props) {
     <View>
       <InputWithLabel
         style={{marginBottom: 8}}
-        label="Name"
-        placeholder="Give your recipe a name"
-        onChangeText={(text) => setName(text)}
+        label="Title"
+        placeholder="Give your recipe a title"
+        onChangeText={(text) => setTitle(text)}
         autoFocus={false}
         autoCorrect={true}
+      />
+
+      <InputWithLabel
+        style={{marginBottom: 8}}
+        label="Description"
+        placeholder="Briefly describe your recipe"
+        onChangeText={(text) => setTitle(text)}
+        multiline={true}
+        numberOfLines={2}
+        autoFocus={false}
+        autoCorrect={true}
+        textAlignVertical={true}
       />
       
       <View style={{marginBottom: 24}}>
         <EmojiPicker
           title="Select an emoji"
-          string={ name ? name : '' }
+          string={ title ? title : '' }
           pickedEmoji={(emoji) => setEmoji(emoji)}
         />
       </View>
