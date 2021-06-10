@@ -7,7 +7,7 @@ import APP from '~styles/app';
 function AddRecipeScreen({ navigation }) {
 
   return (
-    <KeyboardAwareScrollView extraHeight={ 40 }>
+    <KeyboardAwareScrollView extraHeight={ 100 }>
       <View style={APP.containerWider}>
         <RecipeForm navigation={navigation} />
       </View>
