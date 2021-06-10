@@ -14,6 +14,7 @@ function RecipeForm(props) {
   const { navigation } = props;
 
   const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
   const [emoji, setEmoji] = useState('');
   const [time, setTime] = useState(0);
   const [servings, setServings] = useState(1);
@@ -51,7 +52,7 @@ function RecipeForm(props) {
         style={{marginBottom: 8}}
         label="Description"
         placeholder="Briefly describe your recipe"
-        onChangeText={(text) => setTitle(text)}
+        onChangeText={(text) => setDescription(text)}
         multiline={true}
         numberOfLines={2}
         autoFocus={false}
