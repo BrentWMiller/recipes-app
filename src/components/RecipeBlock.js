@@ -26,7 +26,7 @@ function RecipeBlock(props) {
   return (
     <View style={styles.wrapper}>
       <ImagePlaceholder
-        title={ recipe.emoji ? recipe.emoji : recipe.name }
+        title={ recipe.emoji ? recipe.emoji : recipe.title }
         count={ recipe.emoji ? 'emoji' : 2 }
         bgStyle={{ backgroundColor: COLORS.gray[100] }}
         textStyle={{ fontSize: recipe.emoji ? 40 : 24 }}
@@ -41,7 +41,7 @@ function RecipeBlock(props) {
           numberOfLines={ 2 }
           ellipsizeMode="tail"
         >
-          { recipe.name ? recipe.name : 'Name your recipe'}
+          { recipe.title ? recipe.title : 'Name your recipe'}
         </Text>
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
