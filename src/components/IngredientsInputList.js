@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { View, Text, Button, Pressable, StyleSheet, TextInput } from 'react-native';
 import APP from '~styles/app';
-import InputWithLabel from './InputWithLabel';
 import Minus from "~svgs/minus.svg";
+import Grip from "~svgs/grip.svg";
 import COLORS from '~styles/colors';
 
 function IngredientsInputList(props) {
@@ -70,17 +70,23 @@ const IngredientInput = (props) => {
       <TextInput
         value={ value }
         placeholder="1 cup of sugar"
-        style={[APP.input, styles.input, styles.value]}
+        style={[APP.input, styles.input]}
         autoCapitalize="none"
         onChangeText={(text) => saveIngredient(text, 'value')}
         onSubmitEditing={() => props.add()}
       />
 
       <Pressable
-        style={[styles.inputButton]}
+        style={[styles.inputButton, {right: 5}]}
+      >
+        <Grip width="20" height="9" color={COLORS.gray[400]}/>
+      </Pressable>
+
+      <Pressable
+        style={[styles.inputButton, {left: 5}]}
         onPress={() => props.remove(ingredient.id)}
       >
-        <Minus width="20" height="3" color={COLORS.black}/>
+        <Minus width="20" height="3" color={COLORS.gray[400]}/>
       </Pressable>
     </View>
   )
@@ -89,11 +95,11 @@ const IngredientInput = (props) => {
 const styles = StyleSheet.create({
   input: {
     flexGrow: 1,
+    paddingHorizontal: 50
   },
   inputButton: {
     position: 'absolute',
     top: 0,
-    right: 10,
     height: 50,
     width: 40,
     justifyContent: 'center',
