@@ -16,8 +16,9 @@ const APP = StyleSheet.create({
     color: COLORS.gray[800]
   },
   input: {
-    height: 50,
     paddingHorizontal: 15,
+    paddingTop: 15,
+    paddingBottom: 15,
     fontSize: 16,
     borderRadius: 5,
     fontFamily: FONTS.medium500,

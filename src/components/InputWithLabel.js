@@ -8,19 +8,11 @@ function InputWithLabel(props) {
   const description = props.description;
   const [isFocused, setIsFocused] = React.useState(false);
 
-  let height = 50;
-  let paddingVertical = 0;
-
-  if (props.multiline && props.numberOfLines) {
-    height = 50 * props.numberOfLines / 1.425;
-    paddingVertical = 15;
-  }
-
   return (
     <View style={[props.style]}>
       <Text style={[APP.inputLabel, {display: label ? 'flex' : 'none'}]}>{ label }</Text>
       <TextInput
-        style={[APP.input, { height, paddingVertical }]}
+        style={[APP.input]}
         keyboardType={props.keyboardType ?? 'default'}
         contextMenuHidden={props.contextMenuHidden ?? false}
         blurOnSubmit={props.disableReturn !== true}
