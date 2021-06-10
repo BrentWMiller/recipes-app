@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveRecipe } from '~store/recipes';
 import AppButton from './AppButton';
+import DirectionsInputList from './DirectionsInputList';
 import EmojiPicker from './EmojiPicker';
 import IngredientsInputList from './IngredientsInputList';
 import InputWithLabel from './InputWithLabel';
@@ -19,6 +20,7 @@ function RecipeForm(props) {
   const [time, setTime] = useState(0);
   const [servings, setServings] = useState(1);
   const [ingredients, setIngredients] = useState([]);
+  const [directions, setDirections] = useState([]);
 
   const submit = async () => {
     try {
@@ -29,6 +31,7 @@ function RecipeForm(props) {
         time,
         servings,
         ingredients,
+        directions
       }, uid))
 
       navigation.navigate('Home');
@@ -38,7 +41,7 @@ function RecipeForm(props) {
   }
 
   return (
-    <View>
+    <View style={{ marginVertical: 24}}>
       <InputWithLabel
         style={{marginBottom: 8}}
         label="Title"
@@ -55,9 +58,9 @@ function RecipeForm(props) {
         onChangeText={(text) => setDescription(text)}
         multiline={true}
         numberOfLines={2}
+        textAlignVertical={true}
         autoFocus={false}
         autoCorrect={true}
-        textAlignVertical={true}
       />
       
       <View style={{marginBottom: 24}}>
@@ -92,6 +95,12 @@ function RecipeForm(props) {
         title="Ingredients"
         updatedIngredients={(ingredients) => setIngredients(ingredients)}
       />
+
+      <DirectionsInputList
+        title="Directions"
+        updatedDirections={(directions) => setDirections(directions)}
+      />
+
       <AppButton title="Save recipe" type="dark" style={{ marginTop: 40 }} onPress={() => submit()} />
     </View>
   );
