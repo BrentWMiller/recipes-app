@@ -4,6 +4,7 @@ import APP from '~styles/app';
 import Minus from "~svgs/minus.svg";
 import Grip from "~svgs/grip.svg";
 import COLORS from '~styles/colors';
+import FONTS from '~styles/fonts';
 
 function DirectionsInputList(props) {
   const { title } = props;
@@ -37,10 +38,10 @@ function DirectionsInputList(props) {
       {directions.map((direction, index) => {
         return (
           <DirectionInput
+            index={ index }
             key={ direction.id }
             direction={ direction }
             remove={(id) => removeDirection(id)}
-            add={() => addDirection()}
             updateAllDirections={() => updateDirections(directions)}
           />
         )
@@ -55,7 +56,7 @@ function DirectionsInputList(props) {
 }
 
 const DirectionInput = (props) => {
-  const { direction } = props;
+  const { direction, index } = props;
   const [value, setValue] = useState(direction.value);
 
   const saveDirection = (text, type) => {
@@ -69,18 +70,22 @@ const DirectionInput = (props) => {
     <View style={{position: 'relative', flexDirection: 'row', marginBottom: 8}}>
       <TextInput
         value={ value }
-        placeholder="Stir the mixture until smooth"
+        placeholder="Stir the mixture until smooth then leave set for 10 mins"
         style={[APP.input, styles.input]}
         multiline={true}
         numberOfLines={2}
         textAlignVertical={true}
         autoCapitalize="none"
         onChangeText={(text) => saveDirection(text, 'value')}
-        onSubmitEditing={() => props.add()}
       />
+
+      <View style={styles.number}>
+        <Text style={styles.numberText}>{ index + 1 }</Text>
+      </View>
 
       <Pressable
         style={[styles.inputButton, {right: 5}]}
+        onPress={() => console.log('move')}
       >
         <Grip width="20" height="9" color={COLORS.gray[400]}/>
       </Pressable>
@@ -96,9 +101,25 @@ const DirectionInput = (props) => {
 }
 
 const styles = StyleSheet.create({
+  number: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 30,
+    height: 30,
+    backgroundColor: COLORS.gray[800],
+    borderRadius: 30
+  },
+  numberText: {
+    fontSize: 16,
+    fontFamily: FONTS.medium500,
+    color: COLORS.white,
+  },
   input: {
-    flexGrow: 1,
     paddingHorizontal: 50,
+    width: '100%'
   },
   inputButton: {
     position: 'absolute',
