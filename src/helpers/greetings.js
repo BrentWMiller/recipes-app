@@ -97,13 +97,14 @@ export const getTimebasedGreeting = () => {
 
   // Look for an appropriate greeting
   let greetings = timeGreetings.filter(greeting => {
-    if ((time >= greeting.start && time <= greeting.end)) {
+    const withinTime = time >= greeting.start && time <= greeting.end;
+    if ((withinTime && !greeting.day)) {
+      return greeting
+    }
 
-      if (greeting.day && greeting.day === dayOfWeek) {
-        return greeting;
-      } else {
-        return greeting;
-      }
+    // Check for day specific greeting
+    if ((withinTime && (greeting.day && greeting.day === dayOfWeek))) {
+      return greeting
     }
   });
 
