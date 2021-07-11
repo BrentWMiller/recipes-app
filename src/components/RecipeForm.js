@@ -17,6 +17,7 @@ function RecipeForm(props) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [emoji, setEmoji] = useState('');
+  const [category, setCategory] = useState('');
   const [time, setTime] = useState(0);
   const [servings, setServings] = useState(1);
   const [ingredients, setIngredients] = useState([]);
@@ -28,6 +29,7 @@ function RecipeForm(props) {
         title,
         description,
         emoji,
+        category,
         time,
         servings,
         ingredients,
@@ -65,11 +67,19 @@ function RecipeForm(props) {
       
       <View style={{marginBottom: 24}}>
         <EmojiPicker
-          title="Select an emoji"
+          title="Choose an emoji"
           string={ title ? title : '' }
           pickedEmoji={(emoji) => setEmoji(emoji)}
         />
       </View>
+
+      <InputWithLabel
+        label="Category"
+        placeholder="Dinner"
+        onChangeText={(text) => setTime(text)}
+        autoFocus={false}
+        autoCorrect={false}
+      />
 
       <View style={{flexDirection: 'row', marginBottom: 8}}>
         <InputWithLabel
