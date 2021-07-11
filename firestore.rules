@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Collection Rules
+    match /users/{userID} {
+      allow create, read, update: if request.auth.uid != null && request.auth.uid == userID;
+      allow delete: if false;
+      
+      match /recipes/{recipeID} {
+      	allow create, read, update, delete: if request.auth.uid != null && request.auth.uid == userID;
+      }
+    }
+  }
+}
