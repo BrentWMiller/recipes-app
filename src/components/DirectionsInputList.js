@@ -5,6 +5,7 @@ import Minus from "~svgs/minus.svg";
 import Grip from "~svgs/grip.svg";
 import COLORS from '~styles/colors';
 import FONTS from '~styles/fonts';
+import NumberedCircle from './NumberedCircle';
 
 function DirectionsInputList(props) {
   const { title } = props;
@@ -87,7 +88,7 @@ const DirectionInput = (props) => {
       />
 
       <View style={styles.number}>
-        <Text style={styles.numberText}>{ index + 1 }</Text>
+        <NumberedCircle count={index + 1}></NumberedCircle>
       </View>
 
       <Pressable
@@ -111,18 +112,7 @@ const styles = StyleSheet.create({
   number: {
     position: 'absolute',
     top: 12,
-    left: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 30,
-    height: 30,
-    backgroundColor: COLORS.gray[800],
-    borderRadius: 30
-  },
-  numberText: {
-    fontSize: 16,
-    fontFamily: FONTS.medium500,
-    color: COLORS.white,
+    left: 10
   },
   input: {
     paddingHorizontal: 50,
