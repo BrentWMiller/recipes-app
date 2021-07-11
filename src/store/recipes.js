@@ -37,20 +37,14 @@ export const getUserRecipes = (uid) => {
             return { id: doc.id, ...doc.data() };
           })
           .map((recipe) => {
-            recipe.created = formatDate(
-              recipe.created.toDate(),
-              'M/d/yy'
-            );
-            recipe.updated = formatDate(
-              recipe.updated.toDate(),
-              'M/d/yy'
-            );
+            recipe.created = recipe.created.seconds;
+            recipe.updated = recipe.updated.seconds;
 
             return recipe;
           });
 
           // Sort by updated date
-          recipes = recipes.sort((a, b) => a.updated.seconds - b.updated.seconds).reverse();
+          recipes = recipes.sort((a, b) => a.updated - b.updated).reverse();
 
           dispatch({ type: 'recipes/SET_RECIPES', payload: recipes });
         });
