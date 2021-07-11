@@ -8,11 +8,11 @@ const foodEmojis = [
     emoji: '🍕'
   },
   {
-    keywords: ['meat', 'beef'],
+    keywords: ['meat', 'beef', 'pork', 'ribs'],
     emoji: '🍖'
   },
   {
-    keywords: ['lamb', 'lambchop', 'steak', 'filet', 'sirloin', 'porterhouse', 't-bone', 'tbone'],
+    keywords: ['lamb', 'lambchop', 'steak', 'filet', 'sirloin', 'porterhouse', 't-bone', 'tbone', 'pork'],
     emoji: '🥩'
   },
   {
