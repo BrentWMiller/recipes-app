@@ -1,7 +1,10 @@
 import React from 'react';
-import { Button, SafeAreaView, ScrollView, Text } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import AppButton from '~components/AppButton';
 import { signOut } from '~store/user';
+import APP from '~styles/app';
+import TYPOGRAPHY from '~styles/typography';
 
 function ProfileScreen({navigation}) {
   const dispatch = useDispatch();
@@ -17,10 +20,13 @@ function ProfileScreen({navigation}) {
 
   return (
     <SafeAreaView>
-      <ScrollView>
-        <Text>{ user.email }</Text>
-        <Text>{ user.name }</Text>
-        <Button onPress={() => logout()} title="Sign out"></Button>
+      <ScrollView style={[APP.container]}>
+        <View style={{marginBottom: 40}}>
+          <Text style={[TYPOGRAPHY.heading]}>{ user.name }</Text>
+          <Text style={[TYPOGRAPHY.body]}>{ user.email }</Text>
+        </View>
+
+        <AppButton onPress={() => logout()} title="Sign out" type="dark"></AppButton>
       </ScrollView>
     </SafeAreaView>
   );
