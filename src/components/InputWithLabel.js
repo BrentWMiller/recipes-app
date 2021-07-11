@@ -12,7 +12,7 @@ function InputWithLabel(props) {
     <View style={[props.style]}>
       <Text style={[APP.inputLabel, {display: label ? 'flex' : 'none'}]}>{ label }</Text>
       <TextInput
-        style={[APP.input]}
+        style={[APP.input, isFocused && APP.inputFocused ]}
         keyboardType={props.keyboardType ?? 'default'}
         contextMenuHidden={props.contextMenuHidden ?? false}
         blurOnSubmit={props.disableReturn !== true}

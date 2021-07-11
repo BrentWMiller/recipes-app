@@ -23,6 +23,12 @@ const APP = StyleSheet.create({
     borderRadius: 5,
     fontFamily: FONTS.medium500,
     backgroundColor: COLORS.gray[100],
+    borderWidth: 2,
+    borderColor: 'transparent'
+  },
+  inputFocused: {
+    backgroundColor: COLORS.white,
+    borderColor: COLORS.black
   }
 });
 

@@ -58,6 +58,7 @@ function DirectionsInputList(props) {
 const DirectionInput = (props) => {
   const { direction, index } = props;
   const [value, setValue] = useState(direction.value);
+  const [isFocused, setIsFocused] = useState(false);
 
   const saveDirection = (text, type) => {
     setValue(text);
@@ -71,12 +72,18 @@ const DirectionInput = (props) => {
       <TextInput
         value={ value }
         placeholder="Stir the mixture until smooth then leave set for 10 mins"
-        style={[APP.input, styles.input]}
+        style={[APP.input, isFocused && APP.inputFocused, styles.input]}
         multiline={true}
         numberOfLines={2}
         textAlignVertical={true}
         autoCapitalize="none"
         onChangeText={(text) => saveDirection(text, 'value')}
+        onFocus={() => {
+          setIsFocused(true);
+        }}
+        onBlur={() => {
+          setIsFocused(false);
+        }}
       />
 
       <View style={styles.number}>
@@ -103,7 +110,7 @@ const DirectionInput = (props) => {
 const styles = StyleSheet.create({
   number: {
     position: 'absolute',
-    top: 10,
+    top: 12,
     left: 10,
     alignItems: 'center',
     justifyContent: 'center',
@@ -123,7 +130,7 @@ const styles = StyleSheet.create({
   },
   inputButton: {
     position: 'absolute',
-    top: 0,
+    top: 2,
     height: 50,
     width: 40,
     justifyContent: 'center',

@@ -57,6 +57,7 @@ function IngredientsInputList(props) {
 const IngredientInput = (props) => {
   const { ingredient } = props;
   const [value, setValue] = useState(ingredient.value);
+  const [isFocused, setIsFocused] = useState(false);
 
   const saveIngredient = (text, type) => {
     setValue(text);
@@ -70,10 +71,16 @@ const IngredientInput = (props) => {
       <TextInput
         value={ value }
         placeholder="1 cup of sugar"
-        style={[APP.input, styles.input]}
+        style={[APP.input, isFocused && APP.inputFocused, styles.input]}
         autoCapitalize="none"
         onChangeText={(text) => saveIngredient(text, 'value')}
         onSubmitEditing={() => props.add()}
+        onFocus={() => {
+          setIsFocused(true);
+        }}
+        onBlur={() => {
+          setIsFocused(false);
+        }}
       />
 
       <Pressable
@@ -99,7 +106,7 @@ const styles = StyleSheet.create({
   },
   inputButton: {
     position: 'absolute',
-    top: 0,
+    top: 2,
     height: 50,
     width: 40,
     justifyContent: 'center',
