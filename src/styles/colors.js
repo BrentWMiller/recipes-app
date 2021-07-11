@@ -11,8 +11,8 @@ const COLORS = {
     800: '#1F2937',
     900: '#111827'
   },
-  white: '#fff',
-  black: '#000',
+  white: '#ffffff',
+  black: '#000000',
 
   primary: {
     500: '#0029FF'
