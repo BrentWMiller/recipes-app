@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '~screens/Home';
 import ProfileScreen from "~screens/Profile";
@@ -9,9 +9,21 @@ import EditRecipeScreen from "~screens/EditRecipe";
 import AddRecipeScreen from "~screens/AddRecipe";
 import COLORS from "~styles/colors";
 import { createStackNavigator } from "@react-navigation/stack";
+import Home from "~svgs/home.svg";
+import Recipes from "~svgs/recipes.svg";
+import Plus from "~svgs/plus.svg";
 
-const navTheme = DefaultTheme;
-navTheme.colors.background = COLORS.white;
+const navTheme = {
+  dark: false,
+  colors: {
+    primary: COLORS.primary[500],
+    background: COLORS.white,
+    card: COLORS.white,
+    text: COLORS.black,
+    border: COLORS.white,
+    notification: COLORS.primary[500],
+  }
+}
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -37,10 +49,47 @@ const LoggedIn = () => {
         screenOptions={{
           cardStyle: { backgroundColor: COLORS.white }
         }}
+        tabBarOptions={{
+          showLabel: false,
+          activeTintColor: COLORS.white,
+          inactiveTintColor: COLORS.gray[400],
+          style: {
+            backgroundColor: COLORS.black
+          }
+        }}
       >
-        <Tab.Screen name="Home" component={HomeScreenNavigator} />
-        <Tab.Screen name="Add Recipe" component={AddRecipeScreen} />
-        <Tab.Screen name="Recipes" component={RecipesScreen} />
+        <Tab.Screen
+          name="Home"
+          component={HomeScreenNavigator}
+          options={{
+            tabBarAccessibilityLabel: 'Home',
+            tabBarIcon: ({color, size}) => (
+              <Home color={color} width={size} height={size} />
+            ),
+          }}
+        />
+
+        <Tab.Screen
+          name="Add Recipe"
+          component={AddRecipeScreen}
+          options={{
+            tabBarAccessibilityLabel: 'Add Recipe',
+            tabBarIcon: ({color, size}) => (
+              <Plus color={color} width={size} height={size} />
+            ),
+          }}
+        />
+        
+        <Tab.Screen
+          name="Recipes"
+          component={RecipesScreen}
+          options={{
+            tabBarAccessibilityLabel: 'Recipes',
+            tabBarIcon: ({color, size}) => (
+              <Recipes color={color} width={size} height={size} />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
