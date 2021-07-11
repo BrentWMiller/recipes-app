@@ -12,6 +12,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "~svgs/home.svg";
 import Recipes from "~svgs/recipes.svg";
 import Plus from "~svgs/plus.svg";
+import Face from "~svgs/face.svg";
+import FONTS from "~styles/fonts";
 
 const navTheme = {
   dark: false,
@@ -32,9 +34,17 @@ const HomeScreenNavigator = () => {
   return(
     <Stack.Navigator
       initialRouteName="Home"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: COLORS.gray[50],
+        },
+        headerTintColor: COLORS.black,
+        headerTitleStyle: {
+          fontFamily: FONTS.semibold600,
+        },
+      }}
     >
       <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Categories" component={CategoriesScreen} />
       <Stack.Screen name="Edit Recipe" component={EditRecipeScreen} />
     </Stack.Navigator>
@@ -87,6 +97,17 @@ const LoggedIn = () => {
             tabBarAccessibilityLabel: 'Recipes',
             tabBarIcon: ({color, size}) => (
               <Recipes color={color} width={size} height={size} />
+            ),
+          }}
+        />
+
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarAccessibilityLabel: 'Profile',
+            tabBarIcon: ({color, size}) => (
+              <Face color={color} width={size} height={size} />
             ),
           }}
         />
