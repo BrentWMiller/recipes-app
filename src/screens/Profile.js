@@ -20,7 +20,7 @@ function ProfileScreen({navigation}) {
 
   return (
     <SafeAreaView>
-      <ScrollView style={[APP.container]}>
+      <ScrollView style={[APP.container, {paddingTop: 20}]}>
         <View style={{marginBottom: 40}}>
           <Text style={[TYPOGRAPHY.heading]}>{ user.name }</Text>
           <Text style={[TYPOGRAPHY.body]}>{ user.email }</Text>
