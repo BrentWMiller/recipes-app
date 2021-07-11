@@ -21,7 +21,7 @@ const RecipeBlocks = (props) => {
           recipes.length > 0
             ? <View style={[APP.containerWider]}>
                 {recipes.map((recipe, index) => (
-                  <RecipeBlock key={recipe.id} recipe={ recipe } first={index === 0}/>
+                  <RecipeBlock key={recipe.id} recipe={ recipe } first={index === 0} navigation={ navigation }/>
                 ))}
               </View>
             : <NoRecipes navigation={ navigation } />

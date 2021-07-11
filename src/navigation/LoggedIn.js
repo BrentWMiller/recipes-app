@@ -1,19 +1,24 @@
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from "@react-navigation/stack";
+
+// Screens
 import HomeScreen from '~screens/Home';
 import ProfileScreen from "~screens/Profile";
 import CategoriesScreen from "~screens/Categories";
 import RecipesScreen from "~screens/Recipes";
 import EditRecipeScreen from "~screens/EditRecipe";
 import AddRecipeScreen from "~screens/AddRecipe";
-import COLORS from "~styles/colors";
-import { createStackNavigator } from "@react-navigation/stack";
+import RecipeScreen from "~screens/Recipe";
+
+// Icons/Styles
 import Home from "~svgs/home.svg";
 import Recipes from "~svgs/recipes.svg";
 import Plus from "~svgs/plus.svg";
 import Face from "~svgs/face.svg";
 import FONTS from "~styles/fonts";
+import COLORS from "~styles/colors";
 
 const navTheme = {
   dark: false,
@@ -46,6 +51,7 @@ const HomeScreenNavigator = () => {
     >
       <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
       <Stack.Screen name="Categories" component={CategoriesScreen} />
+      <Stack.Screen name="Recipe" component={RecipeScreen} options={{headerShown: false}} />
       <Stack.Screen name="Edit Recipe" component={EditRecipeScreen} />
     </Stack.Navigator>
   )
