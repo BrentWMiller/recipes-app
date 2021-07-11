@@ -76,7 +76,7 @@ function RecipeForm(props) {
       <InputWithLabel
         label="Category"
         placeholder="Dinner"
-        onChangeText={(text) => setTime(text)}
+        onChangeText={(text) => setCategory(text)}
         autoFocus={false}
         autoCorrect={false}
       />
